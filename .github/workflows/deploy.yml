@@ -15,10 +15,13 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Install Yarn
+      run: npm install -g yarn
+      run: git config --global url."https://".insteadOf git://
     - name: Install Packages
-      run: npm install
+      run: yarn install
     - name: Build page
-      run: npm run build
+      run: yarn build
     - name: Deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
       with:

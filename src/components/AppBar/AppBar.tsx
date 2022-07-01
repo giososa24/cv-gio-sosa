@@ -95,7 +95,6 @@ const AppBar = () => {
         style={{
           position: "relative",
           top: 50,
-          overflow: "hidden",
           width: "100vw",
           height: "calc(100vh - 50px)",
         }}

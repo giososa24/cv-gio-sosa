@@ -1,11 +1,22 @@
 {
   "compilerOptions": {
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "baseUrl": "./src",
     "target": "es5",
+    "alwaysStrict": true,
+    "downlevelIteration": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
     "lib": [
+      "es6",
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    "pretty": true,
+    "keyofStringsOnly": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -21,6 +32,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-  ]
+    "src/**/*"
+  ],
+  "exclude": ["node_modules"]
 }

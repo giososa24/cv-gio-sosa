@@ -1,16 +1,16 @@
-import React, { Suspense } from "react";
-import "./App.css";
-import AppBar from "./components/AppBar/AppBar";
-import ThemeContextProvider from "./theme";
+import React, { Suspense, FC } from 'react'
+import './App.css'
+import AppBar from './components/AppBar/AppBar'
+import ThemeContextProvider from './theme'
 
-const App = () => {
+const App: FC = () => {
   return (
     <Suspense fallback="loading...">
       <ThemeContextProvider>
-      <AppBar />
+        <AppBar />
       </ThemeContextProvider>
     </Suspense>
-  );
-};
+  )
+}
 
-export default App;
+export default App

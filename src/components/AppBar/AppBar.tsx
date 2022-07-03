@@ -5,43 +5,46 @@ import {
   AppBar as AppBarMui,
   Box,
   Divider,
-  Drawer,
+  Drawer as DrawerMui,
   IconButton,
   List,
   ListItem,
   ListItemButton,
   ListItemText,
   Toolbar,
-  Typography,
   Button,
 } from '@mui/material'
 import { useThemeContext } from 'theme'
+import { Link } from 'react-router-dom'
 import useStyles from './AppBar.styles'
 import AppBarProps from './AppBar.types'
 
 const DRAWER_WIDTH = 240
+const navItems = ['Home', 'About', 'Contact']
 
-const AppBar: FC<AppBarProps> = ({ children }) => {
-  const theme = useTheme()
-  const { toggleColorMode } = useThemeContext()
+const HomeLink = (): JSX.Element => {
   const { classes } = useStyles()
-  const navItems = ['Home', 'About', 'Contact']
-  const [mobileOpen, setMobileOpen] = React.useState(false)
 
-  const handleDrawerToggle = (): void => {
-    setMobileOpen(!mobileOpen)
-  }
+  return (
+    <ListItemButton className={classes.homeLinkBtn}>
+      <Link to="/">Gio Sosa</Link>
+    </ListItemButton>
+  )
+}
 
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
+const Drawer: FC<{ handleDrawerToggle: VoidFunction }> = ({ handleDrawerToggle }): JSX.Element => {
+  const { classes } = useStyles()
+
+  return (
+    <Box onClick={handleDrawerToggle} className={classes.drawerContainer}>
+      <Box sx={{ my: 2, display: 'flex', justifyContent: 'center' }}>
+        <HomeLink />
+      </Box>
       <Divider />
       <List>
         {navItems.map(item => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
+            <ListItemButton sx={{ textAlign: 'left' }}>
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -49,6 +52,17 @@ const AppBar: FC<AppBarProps> = ({ children }) => {
       </List>
     </Box>
   )
+}
+
+const AppBar: FC<AppBarProps> = ({ children }) => {
+  const theme = useTheme()
+  const { toggleColorMode } = useThemeContext()
+  const { classes } = useStyles()
+  const [mobileOpen, setMobileOpen] = React.useState(false)
+
+  const handleDrawerToggle = (): void => {
+    setMobileOpen(!mobileOpen)
+  }
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -63,21 +77,17 @@ const AppBar: FC<AppBarProps> = ({ children }) => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            MUI
-          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
+            <HomeLink />
+          </Box>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map(item => (
-              <Button key={item} sx={{ color: '#fff' }}>
+              <Button key={item} sx={{ color: theme.palette.background.default }}>
                 {item}
               </Button>
             ))}
           </Box>
-          <Box>
+          <Box className={classes.iconThemeContainer}>
             <IconButton sx={{ ml: 1 }} onClick={toggleColorMode} color="inherit">
               {theme.palette.mode === 'dark' ? (
                 <Brightness7 className={classes.icon} />
@@ -89,7 +99,7 @@ const AppBar: FC<AppBarProps> = ({ children }) => {
         </Toolbar>
       </AppBarMui>
       <Box component="nav">
-        <Drawer
+        <DrawerMui
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
@@ -104,18 +114,10 @@ const AppBar: FC<AppBarProps> = ({ children }) => {
             },
           }}
         >
-          {drawer}
-        </Drawer>
+          <Drawer handleDrawerToggle={handleDrawerToggle} />
+        </DrawerMui>
       </Box>
-      <Box
-        component="main"
-        style={{
-          position: 'relative',
-          top: 50,
-          width: '100vw',
-          height: 'calc(100vh - 50px)',
-        }}
-      >
+      <Box component="main" className={classes.contentContainer}>
         {children}
       </Box>
     </Box>

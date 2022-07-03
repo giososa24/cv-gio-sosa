@@ -2,7 +2,7 @@ import { TFunction } from 'i18next'
 import React, { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
-const Foo: FC = () => {
+const Home: FC = () => {
   const { i18n, t } = useTranslation(['Foo'])
 
   return (
@@ -17,4 +17,4 @@ const Foo: FC = () => {
   )
 }
 
-export default Foo
+export default Home

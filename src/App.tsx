@@ -1,13 +1,12 @@
 import React, { Suspense, FC } from 'react'
-import './App.css'
-import AppBar from './components/AppBar/AppBar'
+import AppRouter from 'router/AppRouter'
 import ThemeContextProvider from './theme'
 
 const App: FC = () => {
   return (
     <Suspense fallback="loading...">
       <ThemeContextProvider>
-        <AppBar />
+        <AppRouter />
       </ThemeContextProvider>
     </Suspense>
   )

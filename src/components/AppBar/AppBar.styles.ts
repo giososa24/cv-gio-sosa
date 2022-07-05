@@ -7,6 +7,12 @@ const useStyles = makeStyles()(theme => ({
   homeLinkBtn: {
     textAlign: 'center',
     maxWidth: 'max-content',
+    '& a': {
+      textDecoration: 'none',
+      fontSize: 25,
+      fontWeight: 300,
+      color: theme.palette.text.primary,
+    },
   },
   drawerContainer: {
     textAlign: 'center',

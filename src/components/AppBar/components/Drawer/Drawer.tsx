@@ -3,12 +3,14 @@ import useStyles from 'components/AppBar/AppBar.styles'
 import { Box, Divider, List, ListItem, ListItemButton, ListItemText } from '@mui/material'
 import HomeLink from 'components/AppBar/components/HomeLink'
 import { navItems } from 'components/AppBar/AppBar'
+import { useTranslation } from 'react-i18next'
 
 type DrawerProps = {
   handleDrawerToggle: VoidFunction
 }
 
 const Drawer: FC<DrawerProps> = ({ handleDrawerToggle }) => {
+  const { t } = useTranslation('AppBar')
   const { classes } = useStyles()
 
   return (
@@ -21,7 +23,7 @@ const Drawer: FC<DrawerProps> = ({ handleDrawerToggle }) => {
         {navItems.map(item => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'left' }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={t(item)} />
             </ListItemButton>
           </ListItem>
         ))}

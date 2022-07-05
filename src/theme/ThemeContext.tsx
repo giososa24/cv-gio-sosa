@@ -1,4 +1,4 @@
-import React, { createContext, FC, useContext, useMemo, useState } from 'react'
+import React, { createContext, FC, memo, useContext, useMemo, useState } from 'react'
 import { createTheme, Theme, ThemeProvider } from '@mui/material'
 import { ToastContainer } from 'react-toastify'
 import { paletteLight, paletteDark } from './Palette'
@@ -79,4 +79,4 @@ const ThemeContextProvider: FC<ThemeContextProviderProps> = ({ children }) => {
   )
 }
 
-export default ThemeContextProvider
+export default memo(ThemeContextProvider)

@@ -1,11 +1,11 @@
-import React, { FC } from 'react'
+import React, { FC, memo } from 'react'
 import { Box } from '@mui/material'
 import { HashRouter, Route, Routes, Navigate } from 'react-router-dom'
 import Home from 'pages/Home'
 import NotFound from 'pages/NotFound'
 import AppBar from 'components/AppBar'
 
-const AppRouter: FC = () => {
+const AppRouter: FC = memo(() => {
   return (
     <HashRouter>
       <AppBar>
@@ -19,6 +19,6 @@ const AppRouter: FC = () => {
       </AppBar>
     </HashRouter>
   )
-}
+})
 
 export default AppRouter

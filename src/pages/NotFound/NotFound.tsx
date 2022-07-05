@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, memo } from 'react'
 import { Box } from '@mui/material'
 import image from 'assets/images/Error_404.png'
 
@@ -10,4 +10,4 @@ const NotFound: FC = () => {
   )
 }
 
-export default NotFound
+export default memo(NotFound)

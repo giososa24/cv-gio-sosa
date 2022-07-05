@@ -1,68 +1,32 @@
-import React, { FC } from 'react'
+import React, { FC, memo, useCallback, useState } from 'react'
 import { Brightness4, Brightness7, Menu as MenuIcon } from '@mui/icons-material'
 import {
   useTheme,
   AppBar as AppBarMui,
   Box,
-  Divider,
   Drawer as DrawerMui,
   IconButton,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
   Toolbar,
   Button,
 } from '@mui/material'
 import { useThemeContext } from 'theme'
-import { Link } from 'react-router-dom'
 import useStyles from './AppBar.styles'
 import AppBarProps from './AppBar.types'
+import HomeLink from './components/HomeLink/HomeLink'
+import Drawer from './components/Drawer'
 
 const DRAWER_WIDTH = 240
-const navItems = ['Home', 'About', 'Contact']
-
-const HomeLink = (): JSX.Element => {
-  const { classes } = useStyles()
-
-  return (
-    <ListItemButton className={classes.homeLinkBtn}>
-      <Link to="/">Gio Sosa</Link>
-    </ListItemButton>
-  )
-}
-
-const Drawer: FC<{ handleDrawerToggle: VoidFunction }> = ({ handleDrawerToggle }): JSX.Element => {
-  const { classes } = useStyles()
-
-  return (
-    <Box onClick={handleDrawerToggle} className={classes.drawerContainer}>
-      <Box sx={{ my: 2, display: 'flex', justifyContent: 'center' }}>
-        <HomeLink />
-      </Box>
-      <Divider />
-      <List>
-        {navItems.map(item => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'left' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  )
-}
+export const navItems = ['Home', 'About', 'Contact']
 
 const AppBar: FC<AppBarProps> = ({ children }) => {
   const theme = useTheme()
   const { toggleColorMode } = useThemeContext()
   const { classes } = useStyles()
-  const [mobileOpen, setMobileOpen] = React.useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
 
-  const handleDrawerToggle = (): void => {
+  const handleDrawerToggle = useCallback((): void => {
     setMobileOpen(!mobileOpen)
-  }
+  }, [mobileOpen])
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -124,4 +88,4 @@ const AppBar: FC<AppBarProps> = ({ children }) => {
   )
 }
 
-export default AppBar
+export default memo(AppBar)

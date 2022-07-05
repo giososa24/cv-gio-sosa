@@ -1,5 +1,5 @@
 import { TFunction } from 'i18next'
-import React, { FC } from 'react'
+import React, { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const Home: FC = () => {
@@ -17,4 +17,4 @@ const Home: FC = () => {
   )
 }
 
-export default Home
+export default memo(Home)

@@ -10,16 +10,18 @@ import {
   Button,
 } from '@mui/material'
 import { useThemeContext } from 'theme'
+import { useTranslation } from 'react-i18next'
 import useStyles from './AppBar.styles'
 import AppBarProps from './AppBar.types'
 import HomeLink from './components/HomeLink/HomeLink'
 import Drawer from './components/Drawer'
 
 const DRAWER_WIDTH = 240
-export const navItems = ['Home', 'About', 'Contact']
+export const navItems = ['Inicio', 'Sobre mí', 'Contáctame']
 
 const AppBar: FC<AppBarProps> = ({ children }) => {
   const theme = useTheme()
+  const { t } = useTranslation('AppBar')
   const { toggleColorMode } = useThemeContext()
   const { classes } = useStyles()
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -30,7 +32,7 @@ const AppBar: FC<AppBarProps> = ({ children }) => {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBarMui component="nav">
+      <AppBarMui component="nav" className={classes.navbar}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -46,8 +48,8 @@ const AppBar: FC<AppBarProps> = ({ children }) => {
           </Box>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map(item => (
-              <Button key={item} sx={{ color: theme.palette.background.default }}>
-                {item}
+              <Button key={item} sx={{ color: theme.palette.text.primary }}>
+                {t(item)}
               </Button>
             ))}
           </Box>

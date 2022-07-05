@@ -1,6 +1,9 @@
 import { makeStyles } from 'tss-react/mui'
 
 const useStyles = makeStyles()(theme => ({
+  navbar: {
+    backgroundColor: `${theme.palette.primary.main} !important`,
+  },
   icon: {
     color: theme.palette.text.primary,
   },

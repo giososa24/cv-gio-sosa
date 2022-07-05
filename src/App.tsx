@@ -1,10 +1,11 @@
-import React, { Suspense, FC, memo } from 'react'
+import React, { Suspense, FC, memo, createElement } from 'react'
+import Loader from 'components/Loader'
 import AppRouter from 'router/AppRouter'
 import ThemeContextProvider from './theme'
 
 const App: FC = () => {
   return (
-    <Suspense fallback="loading...">
+    <Suspense fallback={createElement(Loader)}>
       <ThemeContextProvider>
         <AppRouter />
       </ThemeContextProvider>

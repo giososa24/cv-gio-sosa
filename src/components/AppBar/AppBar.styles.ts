@@ -25,6 +25,7 @@ const useStyles = makeStyles()(theme => ({
     top: 50,
     width: '100vw',
     height: 'calc(100vh - 50px)',
+    backgroundColor: theme.palette.background.default,
   },
   iconThemeContainer: {
     '@media (max-width: 599px)': {

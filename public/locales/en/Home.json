@@ -1,4 +1,5 @@
 {
-    "nombre": "nombre",
-    "puesto": "position"
+    "nombre": "name",
+    "puesto": "position",
+    "Desarrollador frontend": "Frontend developer"
 }

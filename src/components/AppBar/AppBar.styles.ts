@@ -36,6 +36,14 @@ const useStyles = makeStyles()(theme => ({
       justifyContent: 'flex-end',
     },
   },
+  languageContainer: {
+    m: 1,
+    minWidth: 45,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 5,
+  },
 }))
 
 export default useStyles

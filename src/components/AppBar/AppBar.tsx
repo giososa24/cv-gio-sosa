@@ -1,5 +1,5 @@
 import React, { FC, memo, useCallback, useState } from 'react'
-import { Brightness4, Brightness7, Menu as MenuIcon } from '@mui/icons-material'
+import { Brightness4, Brightness7, Menu as MenuIcon, Language } from '@mui/icons-material'
 import {
   useTheme,
   AppBar as AppBarMui,
@@ -69,7 +69,8 @@ const AppBar: FC<AppBarProps> = ({ children }) => {
             ))}
           </Box>
           <Box className={classes.iconThemeContainer}>
-            <FormControl sx={{ m: 1, minWidth: 45 }}>
+            <FormControl className={classes.languageContainer}>
+              <Language />
               <Select value={lang} variant="standard" onChange={handleChange} autoWidth>
                 {languages.map(_lang => (
                   <MenuItem key={_lang} value={_lang}>

@@ -84,7 +84,9 @@ const AppBar: FC<AppBarProps> = ({ children }) => {
         </DrawerMui>
       </Box>
       <Box component="main" className={classes.contentContainer}>
-        {children}
+        <Box width="100%" height="100%">
+          <Box padding="15px">{children}</Box>
+        </Box>
       </Box>
     </Box>
   )

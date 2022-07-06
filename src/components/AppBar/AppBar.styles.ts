@@ -22,9 +22,9 @@ const useStyles = makeStyles()(theme => ({
   },
   contentContainer: {
     position: 'relative',
-    top: 50,
+    top: 64,
     width: '100vw',
-    height: 'calc(100vh - 50px)',
+    height: 'calc(100vh - 64px)',
     backgroundColor: theme.palette.background.default,
   },
   iconThemeContainer: {

@@ -8,6 +8,10 @@ import {
   IconButton,
   Toolbar,
   Button,
+  Select,
+  MenuItem,
+  FormControl,
+  SelectChangeEvent,
 } from '@mui/material'
 import { useThemeContext } from 'theme'
 import { useTranslation } from 'react-i18next'
@@ -18,13 +22,24 @@ import Drawer from './components/Drawer'
 
 const DRAWER_WIDTH = 240
 export const navItems = ['Inicio', 'Sobre mí', 'Contáctame']
+const languages = ['en', 'es']
 
 const AppBar: FC<AppBarProps> = ({ children }) => {
   const theme = useTheme()
-  const { t } = useTranslation('AppBar')
+  const { t, i18n } = useTranslation('AppBar')
   const { toggleColorMode } = useThemeContext()
   const { classes } = useStyles()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [lang, setLang] = useState(localStorage.getItem('i18nextLng') ?? 'es')
+
+  const handleChange = useCallback(
+    (event: SelectChangeEvent): void => {
+      const language = event.target.value
+      setLang(language)
+      void i18n.changeLanguage(language)
+    },
+    [i18n]
+  )
 
   const handleDrawerToggle = useCallback((): void => {
     setMobileOpen(!mobileOpen)
@@ -54,6 +69,15 @@ const AppBar: FC<AppBarProps> = ({ children }) => {
             ))}
           </Box>
           <Box className={classes.iconThemeContainer}>
+            <FormControl sx={{ m: 1, minWidth: 45 }}>
+              <Select value={lang} variant="standard" onChange={handleChange} autoWidth>
+                {languages.map(_lang => (
+                  <MenuItem key={_lang} value={_lang}>
+                    {_lang}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
             <IconButton sx={{ ml: 1 }} onClick={toggleColorMode} color="inherit">
               {theme.palette.mode === 'dark' ? (
                 <Brightness7 className={classes.icon} />

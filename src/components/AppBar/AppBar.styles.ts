@@ -28,6 +28,8 @@ const useStyles = makeStyles()(theme => ({
     backgroundColor: theme.palette.background.default,
   },
   iconThemeContainer: {
+    display: 'flex',
+    alignItems: 'center',
     '@media (max-width: 599px)': {
       width: '100%',
       display: 'flex',

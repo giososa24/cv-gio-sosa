@@ -1,30 +1,31 @@
-import styles from "./Nabvar.module.css";
-import ActiveLink from "../ActiveLink.tsx/ActiveLink";
-import image from "../../assets/images/gio-sosa-logo.png";
-import Image from "next/image";
-import Link from "next/link";
-import { useTranslation } from "next-i18next";
+import { FC } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useTranslation } from 'next-i18next'
+import styles from './Nabvar.module.css'
+import ActiveLink from 'components/ActiveLink'
+import image from 'assets/images/gio-sosa-logo.png'
 
 const menuItems = [
   {
-    label: "Inicio",
-    href: "/",
+    label: 'Inicio',
+    href: '/',
   },
   {
-    label: "Sobre mí",
-    href: "/about",
+    label: 'Sobre mí',
+    href: '/about',
   },
   {
-    label: "Contáctame",
-    href: "/contact",
+    label: 'Contáctame',
+    href: '/contact',
   },
-];
+]
 
-const Nabvar = () => {
-  const { t } = useTranslation("Nabvar");
-  
+const Nabvar: FC = () => {
+  const { t } = useTranslation('Nabvar')
+
   return (
-    <nav className={styles["menu-container"]}>
+    <nav className={styles['menu-container']}>
       <div>
         <Link href="/">
           <a>
@@ -44,7 +45,7 @@ const Nabvar = () => {
         ))}
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Nabvar;
+export default Nabvar

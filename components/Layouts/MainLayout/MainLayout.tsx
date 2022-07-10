@@ -1,8 +1,8 @@
-import Head from "next/head";
-import React, { FC } from "react";
-import Nabvar from "../../Nabvar";
-import styles from "./MainLayout.module.css";
-import MainLayoutProps from "./MainLayout.types";
+import Head from 'next/head'
+import { FC } from 'react'
+import styles from './MainLayout.module.css'
+import MainLayoutProps from './MainLayout.types'
+import Nabvar from 'components/Nabvar'
 
 const MainLayout: FC<MainLayoutProps> = ({ children }) => {
   return (
@@ -17,7 +17,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 
       <main className={styles.main}>{children}</main>
     </div>
-  );
-};
+  )
+}
 
-export default MainLayout;
+export default MainLayout

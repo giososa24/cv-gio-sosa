@@ -1,12 +1,12 @@
-import type { NextPage } from "next";
+import React from "react";
 import MainLayout from "../components/Layouts/MainLayout";
-import { GetStaticProps } from "next";
+import { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
   return (
     <MainLayout>
-      <div>home</div>
+      <div>about</div>
     </MainLayout>
   );
 };
@@ -17,4 +17,4 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   },
 });
 
-export default Home;
+export default About;

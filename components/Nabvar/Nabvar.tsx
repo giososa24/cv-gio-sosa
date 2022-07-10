@@ -3,23 +3,26 @@ import ActiveLink from "../ActiveLink.tsx/ActiveLink";
 import image from "../../assets/images/gio-sosa-logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 const menuItems = [
   {
-    label: "Home",
+    label: "Inicio",
     href: "/",
   },
   {
-    label: "About",
+    label: "Sobre mí",
     href: "/about",
   },
   {
-    label: "Contact",
+    label: "Contáctame",
     href: "/contact",
   },
 ];
 
 const Nabvar = () => {
+  const { t } = useTranslation("Nabvar");
+  
   return (
     <nav className={styles["menu-container"]}>
       <div>
@@ -37,7 +40,7 @@ const Nabvar = () => {
       </div>
       <div>
         {menuItems.map(({ label, href }, i) => (
-          <ActiveLink key={`${i}-${href}`} link={label} href={href} />
+          <ActiveLink key={`${i}-${href}`} link={t(label)} href={href} />
         ))}
       </div>
     </nav>

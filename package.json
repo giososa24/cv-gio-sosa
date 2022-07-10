@@ -18,7 +18,8 @@
     "next-i18next": "^11.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tss-react": "^3.7.1"
+    "tss-react": "^3.7.1",
+    "typewriter-effect": "^2.19.0"
   },
   "lint-staged": {
     "./**/*.{js,jsx,ts,tsx}": [

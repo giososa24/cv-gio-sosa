@@ -1,12 +1,11 @@
-import { FC } from 'react'
+import { FC, memo, useCallback, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
-import { Brightness4, Brightness7 } from '@mui/icons-material'
-import { IconButton } from '@mui/material'
-import styles from './Nabvar.module.css'
+import { Brightness4, Brightness7, Language } from '@mui/icons-material'
+import { FormControl, IconButton, MenuItem, Select, SelectChangeEvent } from '@mui/material'
 import useStyles from './Navbar.styles'
-import ActiveLink from 'components/ActiveLink'
+import ActiveLink from './components/ActiveLink'
 import image from 'assets/images/gio-sosa-logo.png'
 import { useThemeContext } from 'theme/ThemeContext'
 
@@ -25,13 +24,25 @@ const menuItems = [
   },
 ]
 
+const languages = ['en', 'es']
+
 const Nabvar: FC = () => {
-  const { t } = useTranslation('Nabvar')
+  const { t, i18n } = useTranslation('Nabvar')
   const { classes, theme } = useStyles()
   const { toggleColorMode } = useThemeContext()
+  const [lang, setLang] = useState('en')
+
+  const handleChange = useCallback(
+    (event: SelectChangeEvent): void => {
+      const language = event.target.value
+      setLang(language)
+      void i18n.changeLanguage(language)
+    },
+    [i18n]
+  )
 
   return (
-    <nav className={styles['menu-container']}>
+    <nav className={classes.container}>
       <div>
         <Link href="/">
           <a>
@@ -45,12 +56,22 @@ const Nabvar: FC = () => {
           </a>
         </Link>
       </div>
-      <div>
+      <div className={classes.itemsContainer}>
         {menuItems.map(({ label, href }, i) => (
           <ActiveLink key={`${i}-${href}`} link={t(label)} href={href} />
         ))}
       </div>
-      <div>
+      <div className={classes.actionsContainer}>
+        <FormControl className={classes.languageContainer}>
+          <Language />
+          <Select value={lang} variant="standard" onChange={handleChange} autoWidth>
+            {languages.map(_lang => (
+              <MenuItem key={_lang} value={_lang}>
+                {_lang}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
         <IconButton sx={{ ml: 1 }} onClick={toggleColorMode} color="inherit">
           {theme.palette.mode === 'dark' ? (
             <Brightness7 className={classes.icon} />
@@ -63,4 +84,4 @@ const Nabvar: FC = () => {
   )
 }
 
-export default Nabvar
+export default memo(Nabvar)

@@ -2,14 +2,15 @@ import { FC } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import ActiveLinkProps from './ActiveLink.types'
-import styles from './ActiveLink.module.css'
+import useStyles from './ActiveLink.styles'
 
 const ActiveLink: FC<ActiveLinkProps> = ({ link, href }) => {
   const { asPath } = useRouter()
+  const { classes } = useStyles()
 
   return (
     <Link href={href}>
-      <a className={asPath === href ? styles['link-active'] : styles.link}>{link}</a>
+      <a className={asPath === href ? classes.linkActive : classes.link}>{link}</a>
     </Link>
   )
 }

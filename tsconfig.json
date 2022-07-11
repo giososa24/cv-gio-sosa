@@ -21,6 +21,12 @@
     "pretty": true,
     "keyofStringsOnly": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Nabvar", "components/ActiveLink"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/Nabvar",
+    "components/Nabvar/components/ActiveLink"
+  ],
   "exclude": ["node_modules"]
 }

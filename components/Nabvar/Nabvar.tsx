@@ -65,6 +65,7 @@ const Nabvar: FC = () => {
         ))}
       </div>
       <div className={classes.actionsContainer}>
+        <span>texto prueba</span>
         <FormControl className={classes.languageContainer}>
           <Language />
           <Select value={lang} variant="standard" onChange={handleChange} autoWidth>

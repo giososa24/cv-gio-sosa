@@ -7,36 +7,17 @@ on:
     branches:
       - master
 jobs:
-  vercel:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
- 
-      - name: Cache Dependencies
-        uses: actions/cache@v1
+      - uses: actions/checkout@v2
+      #  your build commands
+      # - run: |
+      #    ng build --prod
+      - uses: amondnet/vercel-action@v20 #deploy
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-node-
- 
-      - name: Setup Node 16
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
- 
-      - name: Build
-        run: |
-          yarn install --frozen-lockfile
-          yarn build
- 
-      - name: Deploy to Production
-        uses: amondnet/vercel-action@v20
-        id: deploy-vercel-production
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.ORG_ID }}
-          vercel-project-id: ${{ secrets.PROJECT_ID }}
-          vercel-args: '--prod'
-          scope: ${{ secrets.ORG_ID }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          github-token: ${{ secrets.GITHUB_TOKEN }} #Optional 
+          vercel-args: '--prod' #Optional
+          vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 

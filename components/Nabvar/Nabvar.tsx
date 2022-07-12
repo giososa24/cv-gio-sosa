@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { Brightness4, Brightness7, Language } from '@mui/icons-material'
 import { FormControl, IconButton, MenuItem, Select, SelectChangeEvent } from '@mui/material'
+import { useRouter } from 'next/router'
 import useStyles from './Navbar.styles'
 import ActiveLink from './components/ActiveLink'
 import image from 'assets/images/gio-sosa-logo.png'
@@ -28,17 +29,19 @@ const languages = ['en', 'es']
 
 const Nabvar: FC = () => {
   const { t, i18n } = useTranslation('Nabvar')
+  const { replace, asPath } = useRouter()
   const { classes, theme } = useStyles()
   const { toggleColorMode } = useThemeContext()
-  const [lang, setLang] = useState('en')
+  const [lang, setLang] = useState(i18n.language)
 
   const handleChange = useCallback(
     (event: SelectChangeEvent): void => {
       const language = event.target.value
       setLang(language)
       void i18n.changeLanguage(language)
+      void replace(asPath, asPath, { locale: language })
     },
-    [i18n]
+    [asPath, i18n, replace]
   )
 
   return (

@@ -25,25 +25,6 @@ jobs:
         with:
           node-version: '16'
  
-      - name: Build
-        run: |
-          yarn install --frozen-lockfile
-          npm run bundle
- 
-      - name: Deploy to Staging
-        id: deploy-vercel-staging
-        uses: amondnet/vercel-action@v20
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.ORG_ID }}
-          vercel-project-id: ${{ secrets.PROJECT_ID }}
-          scope: ${{ secrets.ORG_ID }}
- 
-      - name: Run Tests Against Vercel
-        env:
-          VERCEL_URL: ${{ steps.deploy-vercel-staging.outputs.preview-url }}
-        run: npm run test
- 
       - name: Deploy to Production
         uses: amondnet/vercel-action@v20
         id: deploy-vercel-production

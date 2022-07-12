@@ -25,6 +25,11 @@ jobs:
         with:
           node-version: '16'
  
+      - name: Build
+        run: |
+          yarn install --frozen-lockfile
+          npm run bundle
+ 
       - name: Deploy to Production
         uses: amondnet/vercel-action@v20
         id: deploy-vercel-production

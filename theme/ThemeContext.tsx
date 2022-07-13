@@ -2,7 +2,6 @@ import React, { createContext, FC, useContext, useMemo, useState } from 'react'
 import { createTheme, Theme, ThemeProvider } from '@mui/material/styles'
 import { paletteLight, paletteDark } from './Palette'
 import ThemeContextProviderProps from './ThemeContext.types'
-import { nextLocalStorage } from 'utils/nextLocalStorage'
 
 type ModeType = 'light' | 'dark'
 
@@ -31,8 +30,7 @@ export const useThemeContext = (): ContextConfigType => {
 }
 
 const ThemeContextProvider: FC<ThemeContextProviderProps> = ({ children }) => {
-  const initialMode = nextLocalStorage()?.getItem('theme') ?? 'light'
-  const [mode, setMode] = useState<ModeType>(initialMode as ModeType)
+  const [mode, setMode] = useState<ModeType>('light')
 
   const theme = useMemo(
     () =>
@@ -63,7 +61,6 @@ const ThemeContextProvider: FC<ThemeContextProviderProps> = ({ children }) => {
     () => ({
       toggleColorMode: (): void => {
         setMode(prevMode => (prevMode === 'light' ? 'dark' : 'light'))
-        nextLocalStorage()?.setItem('theme', mode === 'light' ? 'dark' : 'light')
       },
       mode,
       theme,

@@ -1,11 +1,12 @@
 import { FC, memo, useCallback, useState } from 'react'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
-import { Brightness4, Brightness7, Language } from '@mui/icons-material'
+import { Brightness4, Brightness7, Language, Menu } from '@mui/icons-material'
 import { FormControl, IconButton, MenuItem, Select, SelectChangeEvent } from '@mui/material'
 import { useRouter } from 'next/router'
 import useStyles from './Navbar.styles'
 import ActiveLink from './components/ActiveLink'
+import Drawer from './components/Drawer'
 import ImageLogo from 'assets/images/gio-sosa.svg'
 import { useThemeContext } from 'theme/ThemeContext'
 
@@ -32,6 +33,22 @@ const Nabvar: FC = () => {
   const { classes, theme } = useStyles()
   const { toggleColorMode } = useThemeContext()
   const [lang, setLang] = useState(i18n.language)
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleDrawer = useCallback(
+    (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event.type === 'keydown' &&
+        ((event as React.KeyboardEvent).key === 'Tab' ||
+          (event as React.KeyboardEvent).key === 'Shift')
+      ) {
+        return
+      }
+
+      setIsOpen(open)
+    },
+    []
+  )
 
   const handleChange = useCallback(
     (event: SelectChangeEvent): void => {
@@ -45,6 +62,9 @@ const Nabvar: FC = () => {
 
   return (
     <nav className={classes.container}>
+      <IconButton onClick={toggleDrawer(true)}>
+        <Menu />
+      </IconButton>
       <div>
         <Link href="/">
           <a className={classes.logo}>
@@ -76,6 +96,7 @@ const Nabvar: FC = () => {
           )}
         </IconButton>
       </div>
+      <Drawer isOpen={isOpen} toggleDrawer={toggleDrawer} />
     </nav>
   )
 }

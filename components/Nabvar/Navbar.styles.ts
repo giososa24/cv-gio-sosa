@@ -1,6 +1,9 @@
 import { makeStyles } from 'tss-react/mui'
 
-const useStyles = makeStyles()(theme => ({
+const useStyles = makeStyles({
+  name: 'Navbar',
+  uniqId: 'QVAzgo',
+})(theme => ({
   container: {
     position: 'fixed',
     width: '100vw',

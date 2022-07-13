@@ -1,6 +1,9 @@
 import { makeStyles } from 'tss-react/mui'
 
-const useStyles = makeStyles()(theme => ({
+const useStyles = makeStyles({
+  name: 'MainLayout',
+  uniqId: 'wFrUh9',
+})(theme => ({
   container: {
     minHeight: '100vh',
     padding: '4rem 0 0',

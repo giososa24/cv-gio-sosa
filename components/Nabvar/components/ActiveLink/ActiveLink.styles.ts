@@ -1,6 +1,9 @@
 import { makeStyles } from 'tss-react/mui'
 
-const useStyles = makeStyles()(theme => ({
+const useStyles = makeStyles({
+  name: 'ActiveLink',
+  uniqId: 'bQJxyG',
+})(theme => ({
   link: {
     fontSize: 24,
     color: theme.palette.text.primary,

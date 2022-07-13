@@ -1,5 +1,5 @@
 import React, { createContext, FC, useContext, useMemo, useState } from 'react'
-import { createTheme, Theme, ThemeProvider } from '@mui/material'
+import { createTheme, Theme, ThemeProvider } from '@mui/material/styles'
 import { paletteLight, paletteDark } from './Palette'
 import ThemeContextProviderProps from './ThemeContext.types'
 import { nextLocalStorage } from 'utils/nextLocalStorage'

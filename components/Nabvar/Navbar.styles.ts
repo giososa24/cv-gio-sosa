@@ -1,9 +1,9 @@
 import { makeStyles } from 'tss-react/mui'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles<{ width: number }>({
   name: 'Navbar',
   uniqId: 'QVAzgo',
-})(theme => ({
+})((theme, { width }) => ({
   container: {
     position: 'fixed',
     width: '100vw',
@@ -16,6 +16,10 @@ const useStyles = makeStyles({
     },
     borderBottom: `2px solid ${theme.palette.primary.main}`,
     boxShadow: '0px 1px 10px 0px rgba(0,0,0,0.55);',
+  },
+  logoContainer: {
+    flex: width > 675 ? 0 : 1,
+    textAlign: 'center',
   },
   itemsContainer: {
     flex: 1,

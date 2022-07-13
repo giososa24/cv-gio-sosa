@@ -9,6 +9,7 @@ import ActiveLink from './components/ActiveLink'
 import Drawer from './components/Drawer'
 import ImageLogo from 'assets/images/gio-sosa.svg'
 import { useThemeContext } from 'theme/ThemeContext'
+import useScreenSize from 'hooks/useScreenSize'
 
 const menuItems = [
   {
@@ -29,8 +30,9 @@ const languages = ['en', 'es']
 
 const Nabvar: FC = () => {
   const { t, i18n } = useTranslation('Nabvar')
+  const { width } = useScreenSize()
   const { replace, asPath } = useRouter()
-  const { classes, theme } = useStyles()
+  const { classes, theme } = useStyles({ width })
   const { toggleColorMode } = useThemeContext()
   const [lang, setLang] = useState(i18n.language)
   const [isOpen, setIsOpen] = useState(false)
@@ -62,21 +64,25 @@ const Nabvar: FC = () => {
 
   return (
     <nav className={classes.container}>
-      <IconButton onClick={toggleDrawer(true)}>
-        <Menu />
-      </IconButton>
-      <div>
+      {width <= 675 && (
+        <IconButton onClick={toggleDrawer(true)}>
+          <Menu />
+        </IconButton>
+      )}
+      <div className={classes.logoContainer}>
         <Link href="/">
           <a className={classes.logo}>
             <ImageLogo />
           </a>
         </Link>
       </div>
-      <div className={classes.itemsContainer}>
-        {menuItems.map(({ label, href }, i) => (
-          <ActiveLink key={`${i}-${href}`} link={t(label)} href={href} />
-        ))}
-      </div>
+      {width > 675 && (
+        <div className={classes.itemsContainer}>
+          {menuItems.map(({ label, href }, i) => (
+            <ActiveLink key={`${i}-${href}`} link={t(label)} href={href} />
+          ))}
+        </div>
+      )}
       <div className={classes.actionsContainer}>
         <FormControl className={classes.languageContainer}>
           <Language />

@@ -1,8 +1,7 @@
-import React, { FC, memo } from 'react'
+import React, { FC, memo, useCallback } from 'react'
 import {
   Box,
   Drawer as DrawerMui,
-  Icon,
   List,
   ListItem,
   ListItemButton,
@@ -10,10 +9,13 @@ import {
   ListItemText,
 } from '@mui/material'
 import { useTranslation } from 'next-i18next'
+import { Home, Email, AccountCircle } from '@mui/icons-material'
 import Link from 'next/link'
-import { DrawerProps } from './Drawer.types'
+import { useRouter } from 'next/router'
+import DrawerProps, { MenuItemsType } from './Drawer.types'
+import useStyles from 'components/Nabvar/components/ActiveLink/ActiveLink.styles'
 
-const menuItems = [
+const menuItems: MenuItemsType[] = [
   {
     label: 'Inicio',
     icon: 'home',
@@ -33,6 +35,24 @@ const menuItems = [
 
 const Drawer: FC<DrawerProps> = ({ isOpen, toggleDrawer }) => {
   const { t } = useTranslation('Nabvar')
+  const { asPath } = useRouter()
+  const { classes } = useStyles()
+
+  const renderIcon = useCallback(
+    (icon: 'home' | 'account_circle' | 'email', isSelected: boolean): JSX.Element => {
+      switch (icon) {
+        case 'home':
+          return <Home className={isSelected ? classes.linkActive : classes.link} />
+        case 'account_circle':
+          return <AccountCircle className={isSelected ? classes.linkActive : classes.link} />
+        case 'email':
+          return <Email className={isSelected ? classes.linkActive : classes.link} />
+        default:
+          return <Home className={isSelected ? classes.linkActive : classes.link} />
+      }
+    },
+    [classes.link, classes.linkActive]
+  )
 
   return (
     <DrawerMui anchor="top" open={isOpen} onClose={toggleDrawer(false)}>
@@ -48,10 +68,11 @@ const Drawer: FC<DrawerProps> = ({ isOpen, toggleDrawer }) => {
               <a>
                 <ListItem disablePadding>
                   <ListItemButton>
-                    <ListItemIcon>
-                      <Icon>{icon}</Icon>
-                    </ListItemIcon>
-                    <ListItemText primary={t(label)} />
+                    <ListItemIcon>{renderIcon(icon, asPath === href)}</ListItemIcon>
+                    <ListItemText
+                      className={asPath === href ? classes.linkActive : classes.link}
+                      primary={t(label)}
+                    />
                   </ListItemButton>
                 </ListItem>
               </a>

@@ -37,6 +37,14 @@ const useStyles = makeStyles({
   icon: {
     color: theme.palette.text.primary,
   },
+  logo: {
+    paddingLeft: 10,
+    '& svg': {
+      width: 83,
+      height: '100%',
+      fill: theme.palette.primary.main,
+    },
+  },
 }))
 
 export default useStyles

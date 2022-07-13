@@ -1,5 +1,4 @@
 import { FC, memo, useCallback, useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { Brightness4, Brightness7, Language } from '@mui/icons-material'
@@ -7,7 +6,7 @@ import { FormControl, IconButton, MenuItem, Select, SelectChangeEvent } from '@m
 import { useRouter } from 'next/router'
 import useStyles from './Navbar.styles'
 import ActiveLink from './components/ActiveLink'
-import image from 'assets/images/gio-sosa-logo.png'
+import ImageLogo from 'assets/images/gio-sosa.svg'
 import { useThemeContext } from 'theme/ThemeContext'
 
 const menuItems = [
@@ -48,14 +47,8 @@ const Nabvar: FC = () => {
     <nav className={classes.container}>
       <div>
         <Link href="/">
-          <a>
-            <Image
-              width="100%"
-              height="40%"
-              src={image}
-              title="Page not found"
-              alt="Page not found"
-            />
+          <a className={classes.logo}>
+            <ImageLogo />
           </a>
         </Link>
       </div>

@@ -14,6 +14,11 @@ const nextConfig = {
       config.resolve.plugins = [new TsconfigPathsPlugin()]
     }
 
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    })
+
     return config
   },
 }

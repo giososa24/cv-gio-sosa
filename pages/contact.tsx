@@ -4,7 +4,7 @@ import MainLayout from 'components/Layouts/MainLayout'
 
 const Contact: NextPage = () => {
   return (
-    <MainLayout>
+    <MainLayout section="Contáctame">
       <div>contact</div>
     </MainLayout>
   )

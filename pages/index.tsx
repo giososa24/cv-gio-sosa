@@ -6,7 +6,7 @@ import JsonCard from 'components/JsonCard/JsonCard'
 
 const Home: NextPage = () => {
   return (
-    <MainLayout>
+    <MainLayout section="Inicio">
       <JsonCard />
     </MainLayout>
   )

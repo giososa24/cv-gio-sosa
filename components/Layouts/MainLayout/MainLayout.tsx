@@ -9,6 +9,8 @@ import Nabvar from 'components/Nabvar'
 const MainLayout: FC<MainLayoutProps> = ({ children, section }) => {
   const { classes } = useStyles()
   const { t } = useTranslation('Nabvar')
+  const urlImage =
+    'https://res.cloudinary.com/ddp9kx9ec/image/upload/v1657773094/69700020_2439957779384101_6064492451857432576_n_pbx3hd.jpg'
 
   return (
     <div>
@@ -24,14 +26,29 @@ const MainLayout: FC<MainLayoutProps> = ({ children, section }) => {
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" />
 
-        {/* Facebook metatags */}
-        <meta property="og:title" content="Gio Sosa - Home" />
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/ddp9kx9ec/image/upload/v1657773094/69700020_2439957779384101_6064492451857432576_n_pbx3hd.jpg"
-        />
-        <meta property="og:url" content="https://gio-sosa.com" />
+        {/* <!-- MS Tile - for Microsoft apps--> */}
+        <meta name="msapplication-TileImage" content={urlImage} />
+
+        {/* <!-- fb & Whatsapp --> */}
+
+        {/* <!-- Site Name, Title, and Description to be displayed --> */}
+        <meta property="og:site_name" content="Gio Sosa" />
+        <meta property="og:title" content="Gio Sosa - Inicio" />
         <meta property="og:description" content="Portafolio personal de Gio Sosa" />
+
+        {/* <!-- Image to display --> */}
+        <meta property="og:image" content={urlImage} />
+
+        {/* <!-- No need to change anything here --> */}
+        <meta property="og:type" content="website" />
+        <meta property="og:image:type" content="image/jpeg" />
+
+        {/* <!-- Size of image. Any size up to 300. Anything above 300px will not work in WhatsApp --> */}
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="300" />
+
+        {/* <!-- Website to visit when clicked in fb or WhatsApp--> */}
+        <meta property="og:url" content="https://gio-sosa.com" />
       </Head>
 
       <Nabvar />

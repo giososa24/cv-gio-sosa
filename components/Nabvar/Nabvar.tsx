@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useState } from 'react'
+import { FC, memo, useCallback, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { Brightness4, Brightness7, Language, Menu } from '@mui/icons-material'
@@ -32,7 +32,10 @@ const Nabvar: FC = () => {
   const { t, i18n } = useTranslation('Nabvar')
   const { width } = useScreenSize()
   const { replace, asPath } = useRouter()
-  const { classes, theme } = useStyles({ width })
+  const navRef = useRef<HTMLElement | null>(null)
+  const { classes, theme } = useStyles({
+    width: width === 0 && navRef ? navRef.current?.clientWidth ?? 0 : width,
+  })
   const { toggleColorMode } = useThemeContext()
   const [lang, setLang] = useState(i18n.language)
   const [isOpen, setIsOpen] = useState(false)
@@ -63,8 +66,8 @@ const Nabvar: FC = () => {
   )
 
   return (
-    <nav className={classes.container}>
-      {width <= 675 && (
+    <nav ref={navRef} className={classes.container}>
+      {(width <= 675 || width === 0) && (
         <IconButton onClick={toggleDrawer(true)}>
           <Menu />
         </IconButton>
@@ -76,7 +79,7 @@ const Nabvar: FC = () => {
           </a>
         </Link>
       </div>
-      {width > 675 && (
+      {(width > 675 || width === 0) && (
         <div className={classes.itemsContainer}>
           {menuItems.map(({ label, href }, i) => (
             <ActiveLink key={`${i}-${href}`} link={t(label)} href={href} />

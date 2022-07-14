@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { FC } from 'react'
+import { Box } from '@mui/material'
 import MainLayoutProps from './MainLayout.types'
 import useStyles from './MainLayout.styles'
 import Nabvar from 'components/Nabvar'
@@ -17,7 +18,9 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
 
       <Nabvar />
 
-      <main className={classes.container}>{children}</main>
+      <main className={classes.container}>
+        <Box padding="15px">{children}</Box>
+      </main>
     </div>
   )
 }

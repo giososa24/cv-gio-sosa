@@ -1,6 +1,12 @@
 import { makeStyles } from 'tss-react/mui'
 
 const useStyles = makeStyles()(theme => ({
+  container: {
+    display: 'flex',
+    '@media (max-width: 400px)': {
+      justifyContent: 'center',
+    },
+  },
   bullets: {
     width: 13,
     height: 13,

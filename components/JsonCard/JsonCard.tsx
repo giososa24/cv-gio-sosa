@@ -23,7 +23,7 @@ const JsonCard: FC = () => {
   )
 
   return (
-    <Box>
+    <Box className={classes.container}>
       <Box className={classes.typeWritterContainer}>
         <Box display="flex" flexDirection="row" gap="5px" m="0 -15px 10px">
           <Box className={classes.bullets} style={{ backgroundColor: 'red' }} />

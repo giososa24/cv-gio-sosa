@@ -1,15 +1,15 @@
-import { FC, memo, useCallback, useRef, useState } from 'react'
+import { FC, memo, useCallback, useState } from 'react'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { Brightness4, Brightness7, Language, Menu } from '@mui/icons-material'
 import { FormControl, IconButton, MenuItem, Select, SelectChangeEvent } from '@mui/material'
+import { useResizeDetector } from 'react-resize-detector'
 import { useRouter } from 'next/router'
 import useStyles from './Navbar.styles'
 import ActiveLink from './components/ActiveLink'
 import Drawer from './components/Drawer'
 import ImageLogo from 'assets/images/gio-sosa.svg'
 import { useThemeContext } from 'theme/ThemeContext'
-import useScreenSize from 'hooks/useScreenSize'
 
 const menuItems = [
   {
@@ -30,12 +30,9 @@ const languages = ['en', 'es']
 
 const Nabvar: FC = () => {
   const { t, i18n } = useTranslation('Nabvar')
-  const { width } = useScreenSize()
+  const { width, ref } = useResizeDetector()
   const { replace, asPath } = useRouter()
-  const navRef = useRef<HTMLElement | null>(null)
-  const { classes, theme } = useStyles({
-    width: width === 0 && navRef ? navRef.current?.clientWidth ?? 0 : width,
-  })
+  const { classes, theme } = useStyles({ width: width ?? 0 })
   const { toggleColorMode } = useThemeContext()
   const [lang, setLang] = useState(i18n.language)
   const [isOpen, setIsOpen] = useState(false)
@@ -66,8 +63,8 @@ const Nabvar: FC = () => {
   )
 
   return (
-    <nav ref={navRef} className={classes.container}>
-      {(width <= 675 || width === 0) && (
+    <nav ref={ref} className={classes.container}>
+      {(width ?? 0) <= 675 && (
         <IconButton onClick={toggleDrawer(true)}>
           <Menu />
         </IconButton>
@@ -79,7 +76,7 @@ const Nabvar: FC = () => {
           </a>
         </Link>
       </div>
-      {(width > 675 || width === 0) && (
+      {(width ?? 0) > 675 && (
         <div className={classes.itemsContainer}>
           {menuItems.map(({ label, href }, i) => (
             <ActiveLink key={`${i}-${href}`} link={t(label)} href={href} />

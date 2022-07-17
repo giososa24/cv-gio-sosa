@@ -1,12 +1,13 @@
 import { FC, memo, useCallback, useState } from 'react'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
-import { Brightness7, Language, Menu } from '@mui/icons-material'
+import { Language, Menu } from '@mui/icons-material'
 import { FormControl, IconButton, MenuItem, Select, SelectChangeEvent } from '@mui/material'
 import { useResizeDetector } from 'react-resize-detector'
 import { useRouter } from 'next/router'
 import ActiveLink from './components/ActiveLink'
 import Drawer from './components/Drawer'
+import ThemeCharger from './components/ThemeCharger'
 import ImageLogo from 'assets/images/gio-sosa.svg'
 
 const menuItems = [
@@ -90,9 +91,7 @@ const Nabvar: FC = () => {
             ))}
           </Select>
         </FormControl>
-        <IconButton sx={{ ml: 1 }} color="inherit">
-          <Brightness7 />
-        </IconButton>
+        <ThemeCharger />
       </div>
       <Drawer isOpen={isOpen} toggleDrawer={toggleDrawer} />
     </nav>

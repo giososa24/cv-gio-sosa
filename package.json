@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
-    "@emotion/server": "^11.4.0",
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.9.0",
@@ -21,7 +20,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-resize-detector": "^7.1.2",
-    "tss-react": "^3.7.1",
     "typewriter-effect": "^2.19.0"
   },
   "lint-staged": {
@@ -36,7 +34,6 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@emotion/cache": "^11.9.3",
     "@types/node": "18.0.3",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",

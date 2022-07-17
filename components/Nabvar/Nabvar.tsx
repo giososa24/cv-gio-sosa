@@ -1,15 +1,13 @@
 import { FC, memo, useCallback, useState } from 'react'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
-import { Brightness4, Brightness7, Language, Menu } from '@mui/icons-material'
+import { Brightness7, Language, Menu } from '@mui/icons-material'
 import { FormControl, IconButton, MenuItem, Select, SelectChangeEvent } from '@mui/material'
 import { useResizeDetector } from 'react-resize-detector'
 import { useRouter } from 'next/router'
-import useStyles from './Navbar.styles'
 import ActiveLink from './components/ActiveLink'
 import Drawer from './components/Drawer'
 import ImageLogo from 'assets/images/gio-sosa.svg'
-import { useThemeContext } from 'theme/ThemeContext'
 
 const menuItems = [
   {
@@ -32,8 +30,6 @@ const Nabvar: FC = () => {
   const { t, i18n } = useTranslation('Nabvar')
   const { width, ref } = useResizeDetector()
   const { replace, asPath } = useRouter()
-  const { classes, theme } = useStyles({ width: width ?? 0 })
-  const { toggleColorMode } = useThemeContext()
   const [lang, setLang] = useState(i18n.language)
   const [isOpen, setIsOpen] = useState(false)
 
@@ -63,28 +59,28 @@ const Nabvar: FC = () => {
   )
 
   return (
-    <nav ref={ref} className={classes.container}>
+    <nav ref={ref}>
       {(width ?? 0) <= 675 && (
         <IconButton onClick={toggleDrawer(true)}>
           <Menu />
         </IconButton>
       )}
-      <div className={classes.logoContainer}>
+      <div>
         <Link href="/">
-          <a className={classes.logo}>
+          <a>
             <ImageLogo />
           </a>
         </Link>
       </div>
       {(width ?? 0) > 675 && (
-        <div className={classes.itemsContainer}>
+        <div>
           {menuItems.map(({ label, href }, i) => (
             <ActiveLink key={`${i}-${href}`} link={t(label)} href={href} />
           ))}
         </div>
       )}
-      <div className={classes.actionsContainer}>
-        <FormControl className={classes.languageContainer}>
+      <div>
+        <FormControl>
           <Language />
           <Select value={lang} variant="standard" onChange={handleChange} autoWidth>
             {languages.map(_lang => (
@@ -94,12 +90,8 @@ const Nabvar: FC = () => {
             ))}
           </Select>
         </FormControl>
-        <IconButton sx={{ ml: 1 }} onClick={toggleColorMode} color="inherit">
-          {theme.palette.mode === 'dark' ? (
-            <Brightness7 className={classes.icon} />
-          ) : (
-            <Brightness4 className={classes.icon} />
-          )}
+        <IconButton sx={{ ml: 1 }} color="inherit">
+          <Brightness7 />
         </IconButton>
       </div>
       <Drawer isOpen={isOpen} toggleDrawer={toggleDrawer} />

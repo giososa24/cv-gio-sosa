@@ -3,11 +3,9 @@ import { FC } from 'react'
 import { Box } from '@mui/material'
 import { useTranslation } from 'next-i18next'
 import MainLayoutProps from './MainLayout.types'
-import useStyles from './MainLayout.styles'
 import Nabvar from 'components/Nabvar'
 
 const MainLayout: FC<MainLayoutProps> = ({ children, section }) => {
-  const { classes } = useStyles()
   const { t } = useTranslation('Nabvar')
   const urlImage =
     'https://res.cloudinary.com/ddp9kx9ec/image/upload/v1657773094/69700020_2439957779384101_6064492451857432576_n_pbx3hd.jpg'
@@ -53,7 +51,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children, section }) => {
 
       <Nabvar />
 
-      <main className={classes.container}>
+      <main>
         <Box padding="15px">{children}</Box>
       </main>
     </div>

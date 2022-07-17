@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 import ActiveLink from './components/ActiveLink'
 import Drawer from './components/Drawer'
 import ThemeCharger from './components/ThemeCharger'
+import styles from './Navbar.module.css'
 import ImageLogo from 'assets/images/gio-sosa.svg'
 
 const menuItems = [
@@ -60,28 +61,28 @@ const Nabvar: FC = () => {
   )
 
   return (
-    <nav ref={ref}>
+    <nav ref={ref} className={styles['nav-container']}>
       {(width ?? 0) <= 675 && (
         <IconButton onClick={toggleDrawer(true)}>
           <Menu />
         </IconButton>
       )}
-      <div>
+      <div className={styles['logo-container']}>
         <Link href="/">
-          <a>
+          <a className={styles.logo}>
             <ImageLogo />
           </a>
         </Link>
       </div>
       {(width ?? 0) > 675 && (
-        <div>
+        <div className={styles['items-container']}>
           {menuItems.map(({ label, href }, i) => (
             <ActiveLink key={`${i}-${href}`} link={t(label)} href={href} />
           ))}
         </div>
       )}
-      <div>
-        <FormControl>
+      <div className="flex">
+        <FormControl className={styles['language-container']}>
           <Language />
           <Select value={lang} variant="standard" onChange={handleChange} autoWidth>
             {languages.map(_lang => (

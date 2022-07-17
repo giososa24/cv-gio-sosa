@@ -35,8 +35,6 @@ const JsonCard: FC = () => {
           options={{
             autoStart: true,
             loop: true,
-            // wrapperClassName: classes.typeWritter,
-            // cursorClassName: classes.typeWritter,
           }}
         />
       </Box>

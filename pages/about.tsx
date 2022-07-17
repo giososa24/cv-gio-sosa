@@ -5,7 +5,7 @@ import MainLayout from 'components/Layouts/MainLayout'
 const About: NextPage = () => {
   return (
     <MainLayout section="Sobre mí">
-      <div>about</div>
+      <div className="text-th-primary">about</div>
     </MainLayout>
   )
 }

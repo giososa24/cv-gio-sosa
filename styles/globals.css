@@ -26,3 +26,21 @@ a {
 .typewriter-label {
   color: rgb(199, 196, 39);
 }
+
+:root {
+  --primary: theme('colors.primary');
+  --secondary: theme('colors.secondary');
+  --error: theme('colors.error');
+  --warning: theme('colors.warning');
+  --info: theme('colors.info');
+  --success: theme('colors.success');
+}
+
+[data-theme='dark'] {
+  --primary: theme('colors.primary-dark');
+  --secondary: theme('colors.secondary-dark');
+  --error: theme('colors.error-dark');
+  --warning: theme('colors.warning-dark');
+  --info: theme('colors.info-dark');
+  --success: theme('colors.success-dark');
+}

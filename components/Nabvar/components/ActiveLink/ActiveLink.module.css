@@ -1,0 +1,10 @@
+.link {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.link-active {
+  font-size: 24px;
+  text-decoration: underline;
+  @apply text-th-primary font-semibold;
+}

@@ -2,7 +2,7 @@ import { FC, memo, useCallback, useState } from 'react'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { Language, Menu } from '@mui/icons-material'
-import { FormControl, IconButton, MenuItem, Select, SelectChangeEvent } from '@mui/material'
+import { IconButton, MenuItem, Select, SelectChangeEvent } from '@mui/material'
 import { useResizeDetector } from 'react-resize-detector'
 import { useRouter } from 'next/router'
 import ActiveLink from './components/ActiveLink'
@@ -82,7 +82,7 @@ const Nabvar: FC = () => {
         </div>
       )}
       <div className="flex">
-        <FormControl className={styles['language-container']}>
+        <div className={styles['language-container']}>
           <Language />
           <Select value={lang} variant="standard" onChange={handleChange} autoWidth>
             {languages.map(_lang => (
@@ -91,7 +91,7 @@ const Nabvar: FC = () => {
               </MenuItem>
             ))}
           </Select>
-        </FormControl>
+        </div>
         <ThemeCharger />
       </div>
       <Drawer isOpen={isOpen} toggleDrawer={toggleDrawer} />

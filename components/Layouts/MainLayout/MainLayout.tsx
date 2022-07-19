@@ -3,6 +3,7 @@ import { FC } from 'react'
 import { Box } from '@mui/material'
 import { useTranslation } from 'next-i18next'
 import MainLayoutProps from './MainLayout.types'
+import classes from './MainLayout.module.css'
 import Nabvar from 'components/Nabvar'
 
 const MainLayout: FC<MainLayoutProps> = ({ children, section }) => {
@@ -51,7 +52,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children, section }) => {
 
       <Nabvar />
 
-      <main>
+      <main className={classes.container}>
         <Box padding="15px">{children}</Box>
       </main>
     </div>

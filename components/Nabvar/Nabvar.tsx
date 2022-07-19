@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import ActiveLink from './components/ActiveLink'
 import Drawer from './components/Drawer'
 import ThemeCharger from './components/ThemeCharger'
-import styles from './Navbar.module.css'
+import classes from './Navbar.module.css'
 import ImageLogo from 'assets/images/gio-sosa.svg'
 
 const menuItems = [
@@ -61,28 +61,28 @@ const Nabvar: FC = () => {
   )
 
   return (
-    <nav ref={ref} className={styles['nav-container']}>
+    <nav ref={ref} className={classes['nav-container']}>
       {(width ?? 0) <= 675 && (
         <IconButton onClick={toggleDrawer(true)}>
           <Menu />
         </IconButton>
       )}
-      <div className={styles['logo-container']}>
+      <div className={classes['logo-container']}>
         <Link href="/">
-          <a className={styles.logo}>
+          <a className={classes.logo}>
             <ImageLogo />
           </a>
         </Link>
       </div>
       {(width ?? 0) > 675 && (
-        <div className={styles['items-container']}>
+        <div className={classes['items-container']}>
           {menuItems.map(({ label, href }, i) => (
             <ActiveLink key={`${i}-${href}`} link={t(label)} href={href} />
           ))}
         </div>
       )}
       <div className="flex">
-        <div className={styles['language-container']}>
+        <div className={classes['language-container']}>
           <Language />
           <Select value={lang} variant="standard" onChange={handleChange} autoWidth>
             {languages.map(_lang => (

@@ -2,6 +2,7 @@ import React, { FC, useMemo } from 'react'
 import { Box } from '@mui/material'
 import Typewriter from 'typewriter-effect'
 import { useTranslation } from 'next-i18next'
+import classes from './JsonCard.module.css'
 
 const JsonCard: FC = () => {
   const { t } = useTranslation('index')
@@ -21,12 +22,12 @@ const JsonCard: FC = () => {
   )
 
   return (
-    <Box>
-      <Box>
+    <Box className={classes.container}>
+      <Box className={classes['typewritter-container']}>
         <Box display="flex" flexDirection="row" gap="5px" m="0 -15px 10px">
-          <Box style={{ backgroundColor: 'red' }} />
-          <Box style={{ backgroundColor: 'yellow' }} />
-          <Box style={{ backgroundColor: 'green' }} />
+          <Box className={classes.bullets} style={{ backgroundColor: 'red' }} />
+          <Box className={classes.bullets} style={{ backgroundColor: 'yellow' }} />
+          <Box className={classes.bullets} style={{ backgroundColor: 'green' }} />
         </Box>
         <Typewriter
           onInit={(typewriter): void => {
@@ -35,6 +36,8 @@ const JsonCard: FC = () => {
           options={{
             autoStart: true,
             loop: true,
+            wrapperClassName: classes['type-writter'],
+            cursorClassName: classes['type-writter'],
           }}
         />
       </Box>

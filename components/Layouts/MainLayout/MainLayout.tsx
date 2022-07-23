@@ -53,7 +53,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children, section }) => {
       <Nabvar />
 
       <main className={classes.container}>
-        <Box padding="15px">{children}</Box>
+        <Box className={classes['children-container']}>{children}</Box>
       </main>
     </div>
   )

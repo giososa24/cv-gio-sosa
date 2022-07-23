@@ -2,3 +2,9 @@
   max-width: 1200px;
   margin: auto;
 }
+
+.children-container {
+  padding: 15px;
+  overflow-y: auto;
+  height: calc(100vh - 62px);
+}

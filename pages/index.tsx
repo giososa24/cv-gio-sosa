@@ -19,6 +19,33 @@ const Home: NextPage = () => {
           <Typography>Hola, soy Giovanni Sosa</Typography>
         </Box>
       </Box>
+      <JsonCard />
+      <Box mt="15px" display="flex" gap="10px">
+        <Box minWidth="150px">
+          <Image src={HelloHand} alt="hello-hand" width="150px" height="150px" />
+        </Box>
+        <Box>
+          <Typography>Hola, soy Giovanni Sosa</Typography>
+        </Box>
+      </Box>
+      <JsonCard />
+      <Box mt="15px" display="flex" gap="10px">
+        <Box minWidth="150px">
+          <Image src={HelloHand} alt="hello-hand" width="150px" height="150px" />
+        </Box>
+        <Box>
+          <Typography>Hola, soy Giovanni Sosa</Typography>
+        </Box>
+      </Box>
+      <JsonCard />
+      <Box mt="15px" display="flex" gap="10px">
+        <Box minWidth="150px">
+          <Image src={HelloHand} alt="hello-hand" width="150px" height="150px" />
+        </Box>
+        <Box>
+          <Typography>Hola, soy Giovanni Sosa</Typography>
+        </Box>
+      </Box>
     </MainLayout>
   )
 }

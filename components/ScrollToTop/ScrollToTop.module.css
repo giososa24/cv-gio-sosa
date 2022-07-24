@@ -1,0 +1,15 @@
+.fab {
+  position: fixed;
+  padding: 1em 2em;
+  bottom: 30px;
+  right: 30px;
+  @apply bg-th-primary text-th-background;
+}
+
+.fab svg {
+  @apply fill-th-background;
+}
+
+.fab:hover {
+  @apply bg-th-primary;
+}

@@ -12,7 +12,7 @@ const Contact: NextPage = () => {
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale ?? 'es', ['Nabvar'])),
+    ...(await serverSideTranslations(locale ?? 'es', ['common', 'Nabvar'])),
   },
 })
 

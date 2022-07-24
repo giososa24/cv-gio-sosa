@@ -7,9 +7,9 @@
 }
 
 .fab svg {
-  @apply fill-th-background;
+  @apply fill-th-background !important;
 }
 
 .fab:hover {
-  @apply bg-th-primary;
+  @apply bg-th-primary !important;
 }

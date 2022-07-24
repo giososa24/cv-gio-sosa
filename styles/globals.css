@@ -36,6 +36,8 @@ a {
   --info: theme('colors.info');
   --success: theme('colors.success');
   --background: theme('colors.background');
+  --background-contrast: theme('colors.background-dark');
+  --background-paper: theme('colors.background-paper');
 }
 
 [data-theme='dark'] {
@@ -46,6 +48,22 @@ a {
   --info: theme('colors.info-dark');
   --success: theme('colors.success-dark');
   --background: theme('colors.background-dark');
+  --background-contrast: theme('colors.background');
+  --background-paper: theme('colors.background-paper-dark');
+}
+
+/* MUI Overrides */
+.MuiSvgIcon-root {
+  @apply fill-th-background-contrast;
+}
+
+.MuiSelect-select,
+.MuiTypography-root {
+  @apply text-th-background-contrast;
+}
+
+.MuiPaper-root {
+  @apply bg-th-background-paper;
 }
 
 ::-webkit-scrollbar {

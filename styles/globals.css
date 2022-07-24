@@ -73,13 +73,8 @@ a {
   max-height: 0.65em;
 }
 
-::-webkit-scrollbar:hover {
-  background: #ccc;
-  border-radius: 20px;
-}
-
 ::-webkit-scrollbar-thumb {
-  background-color: #cccccc;
+  background-color: #aaa;
   border-radius: 20px;
 }
 

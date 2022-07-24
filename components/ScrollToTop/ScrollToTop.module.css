@@ -1,9 +1,9 @@
 .fab {
-  position: fixed;
-  padding: 1em 2em;
+  position: fixed !important;
+  padding: 1em 2em !important;
   bottom: 30px;
   right: 30px;
-  @apply bg-th-primary text-th-background;
+  @apply bg-th-primary text-th-background !important;
 }
 
 .fab svg {

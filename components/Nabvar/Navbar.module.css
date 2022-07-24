@@ -1,6 +1,6 @@
 .nav-container {
   border-bottom: 2px solid;
-  @apply flex gap-3 pl-2 border-b-th-primary;
+  @apply flex gap-3 px-3 border-b-th-primary;
 }
 
 .logo svg {

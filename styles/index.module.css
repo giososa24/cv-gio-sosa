@@ -1,0 +1,28 @@
+.greeting-container {
+  margin-top: 15px;
+  display: flex;
+  grid-gap: 10px;
+}
+
+.hand-container {
+  min-width: 150px;
+}
+
+.title {
+  font-size: 30px;
+  @apply text-th-primary !important;
+}
+
+.info {
+  text-align: justify;
+}
+
+@media only screen and (max-width: 450px) {
+  .hand-container {
+    text-align: center;
+  }
+
+  .greeting-container {
+    display: grid;
+  }
+}

@@ -58,6 +58,7 @@ a {
 }
 
 .MuiSelect-select,
+.MuiMenuItem-root,
 .MuiTypography-root {
   @apply text-th-background-contrast;
 }

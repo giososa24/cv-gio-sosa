@@ -1,5 +1,7 @@
 {
   "nombre": "name",
   "puesto": "position",
-  "Desarrollador frontend": "Frontend developer"
+  "Desarrollador frontend": "Frontend developer",
+  "Hola, soy Gio Sosa": "Hi, I'm Gio Sosa",
+  "La programación más que un trabajo es mi hobby, me especializo desarrollando frontend en React pero también cuento con conocimientos de backend y otras tecnologías": "Programming more than a job is my hobby, I specialize in frontend React developing but I also have knowledge of backend and other technologies"
 }

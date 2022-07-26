@@ -1,4 +1,4 @@
-.container {
+.wrapper {
   display: flex;
 }
 
@@ -8,22 +8,59 @@
   border-radius: 100%;
 }
 
-.typewritter-container {
-  width: 300px;
-  height: 130px;
+.container {
   border-radius: 10px;
   padding: 10px 30px;
   box-shadow: 8px 8px 8px -4px rgba(0, 0, 0, 0.29);
-  background-color: #444;
+  background: linear-gradient(90deg, #222 20%, #333 80%);
 }
 
-.type-writter {
-  font-size: 14px;
-  font-style: italic;
+.greeting-container {
+  margin-top: 15px;
+  display: flex;
+  grid-gap: 10px;
 }
 
-@media only screen and (max-width: 400px) {
-  .container {
-    justify-content: center;
+.hand-container {
+  min-width: 150px;
+}
+
+.handImage {
+  padding: 10px !important;
+  animation: greeting 0.7s linear 3;
+}
+
+.title {
+  font-size: 30px;
+  @apply text-th-primary !important;
+}
+
+.info {
+  text-align: justify;
+  @apply text-background;
+}
+
+@keyframes greeting {
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(60deg);
+  }
+  75% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .hand-container {
+    text-align: center;
+  }
+
+  .greeting-container {
+    display: grid;
   }
 }

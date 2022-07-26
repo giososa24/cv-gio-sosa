@@ -1,20 +1,29 @@
 .card-content {
   margin: 2em 0;
   border-radius: 10px;
-  border: 1px solid #eee;
+  border: 1px solid;
   background: linear-gradient(90deg, #222 20%, #333 80%);
   padding: 10px;
+  @apply border-th-background-contrast;
 }
 
 .title {
-  margin: -29px 10px 0;
+  margin: -30px 10px 15px;
   width: max-content;
   padding: 0 10px;
   font-size: 24px;
-  @apply bg-th-background text-th-primary;
+  @apply text-th-primary;
+}
+
+.title-line {
+  width: 100%;
+  height: 1px;
+  margin-top: -32px;
+  @apply bg-th-background;
 }
 
 .logo-container {
+  margin: 20px 0 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, 85px);
   gap: 2em;

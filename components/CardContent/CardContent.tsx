@@ -10,12 +10,15 @@ import NextJsLogo from 'assets/images/nextjs-logo.png'
 const CardContent: FC = () => {
   return (
     <div className={classes['card-content']}>
-      <Typography className={classes.title}>Frontend</Typography>
+      <div style={{ width: 'max-content' }}>
+        <Typography className={classes.title}>Frontend</Typography>
+        <div className={classes['title-line']} />
+      </div>
       <div className={classes['logo-container']}>
         <Image src={ReactLogo} alt="react-logo" width="150px" height="120px" />
         <Image src={AngularLogo} alt="angular-logo" width="90px" height="90px" />
-        <Image src={ReactNativeLogo} alt="angular-logo" width="125px" height="125px" />
-        <Image src={NextJsLogo} alt="angular-logo" width="80px" height="80px" />
+        <Image src={ReactNativeLogo} alt="react-native-logo" width="125px" height="125px" />
+        <Image src={NextJsLogo} alt="nextjs-logo" width="80px" height="80px" />
       </div>
     </div>
   )

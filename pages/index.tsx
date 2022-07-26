@@ -17,7 +17,13 @@ const Home: NextPage = () => {
       <JsonCard />
       <Box className={classes['greeting-container']}>
         <Box className={classes['hand-container']}>
-          <Image src={HelloHand} alt="hello-hand" width="150px" height="150px" />
+          <Image
+            src={HelloHand}
+            className={classes.handImage}
+            alt="hello-hand"
+            width="150px"
+            height="150px"
+          />
         </Box>
         <Box>
           <Typography component="h1" className={classes.title}>

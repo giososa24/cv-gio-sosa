@@ -8,6 +8,11 @@
   min-width: 150px;
 }
 
+.handImage {
+  padding: 10px !important;
+  animation: greeting 0.7s linear 3;
+}
+
 .title {
   font-size: 30px;
   @apply text-th-primary !important;
@@ -15,6 +20,21 @@
 
 .info {
   text-align: justify;
+}
+
+@keyframes greeting {
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(60deg);
+  }
+  75% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @media only screen and (max-width: 450px) {

@@ -1,0 +1,23 @@
+.card-content {
+  margin: 2em 0;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  background: linear-gradient(90deg, #222 20%, #333 80%);
+  padding: 10px;
+}
+
+.title {
+  margin: -29px 10px 0;
+  width: max-content;
+  padding: 0 10px;
+  font-size: 24px;
+  @apply bg-th-background text-th-primary;
+}
+
+.logo-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 85px);
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+}

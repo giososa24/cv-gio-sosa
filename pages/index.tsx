@@ -8,6 +8,7 @@ import HelloHand from 'assets/images/hello-hand.png'
 import MainLayout from 'components/Layouts/MainLayout'
 import JsonCard from 'components/JsonCard/JsonCard'
 import classes from 'styles/index.module.css'
+import CardContent from 'components/CardContent'
 
 const Home: NextPage = () => {
   const { t } = useTranslation('index')
@@ -36,6 +37,7 @@ const Home: NextPage = () => {
           </Typography>
         </Box>
       </Box>
+      <CardContent />
     </MainLayout>
   )
 }

@@ -54,17 +54,17 @@ a {
 
 /* MUI Overrides */
 .MuiSvgIcon-root {
-  @apply fill-th-background-contrast;
+  @apply fill-th-background-contrast !important;
 }
 
 .MuiSelect-select,
 .MuiMenuItem-root,
 .MuiTypography-root {
-  @apply text-th-background-contrast;
+  @apply text-th-background-contrast !important;
 }
 
 .MuiPaper-root {
-  @apply bg-th-background-paper;
+  @apply bg-th-background-paper !important;
 }
 
 ::-webkit-scrollbar {

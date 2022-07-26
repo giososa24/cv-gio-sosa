@@ -2,9 +2,9 @@ import React, { FC, useMemo } from 'react'
 import { Box } from '@mui/material'
 import Typewriter from 'typewriter-effect'
 import { useTranslation } from 'next-i18next'
-import classes from './JsonCard.module.css'
+import classes from './PresentationCard.module.css'
 
-const JsonCard: FC = () => {
+const PresentationCard: FC = () => {
   const { t } = useTranslation('index')
 
   const jsonText = useMemo(
@@ -45,4 +45,4 @@ const JsonCard: FC = () => {
   )
 }
 
-export default JsonCard
+export default PresentationCard

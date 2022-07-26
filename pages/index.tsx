@@ -6,7 +6,7 @@ import { Box, Typography } from '@mui/material'
 import { useTranslation } from 'next-i18next'
 import HelloHand from 'assets/images/hello-hand.png'
 import MainLayout from 'components/Layouts/MainLayout'
-import JsonCard from 'components/JsonCard/JsonCard'
+import PresentationCard from 'components/PresentationCard'
 import classes from 'styles/index.module.css'
 import CardContent from 'components/CardContent'
 
@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 
   return (
     <MainLayout section="Inicio">
-      <JsonCard />
+      <PresentationCard />
       <Box className={classes['greeting-container']}>
         <Box className={classes['hand-container']}>
           <Image

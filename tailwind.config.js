@@ -19,7 +19,7 @@ module.exports = {
         'success-dark': '#1b5e20',
         background: '#dedede',
         'background-dark': '#222222',
-        'background-paper': '#dedede',
+        'background-paper': '#cdcdcd',
         'background-paper-dark': '#333333',
         'th-primary': 'var(--primary)',
         'th-secondary': 'var(--secondary)',

@@ -12,7 +12,8 @@
   border-radius: 10px;
   padding: 10px 30px;
   box-shadow: 8px 8px 8px -4px rgba(0, 0, 0, 0.29);
-  background: linear-gradient(90deg, #222 20%, #333 80%);
+  border: 1px solid;
+  @apply bg-gradient-to-r from-th-background to-th-background-paper;
 }
 
 .greeting-container {

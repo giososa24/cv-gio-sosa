@@ -4,12 +4,13 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import MainLayout from 'components/Layouts/MainLayout'
 import PresentationCard from 'components/PresentationCard'
 import CardContent from 'components/CardContent'
+import frontEndItems from 'components/CardContent/frontEndItems'
 
 const Home: NextPage = () => {
   return (
     <MainLayout section="Inicio">
       <PresentationCard />
-      <CardContent />
+      <CardContent collection={frontEndItems} />
     </MainLayout>
   )
 }

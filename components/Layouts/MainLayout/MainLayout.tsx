@@ -6,6 +6,7 @@ import MainLayoutProps from './MainLayout.types'
 import classes from './MainLayout.module.css'
 import Nabvar from 'components/Nabvar'
 import ScrollToTop from 'components/ScrollToTop'
+import SocialLinks from 'components/SocialLinks'
 
 const MainLayout: FC<MainLayoutProps> = ({ children, section }) => {
   const { t } = useTranslation('Nabvar')
@@ -56,6 +57,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children, section }) => {
 
       <main className={classes.container}>
         <Box className={classes['children-container']}>{children}</Box>
+        <SocialLinks />
         <ScrollToTop />
       </main>
     </div>

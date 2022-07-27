@@ -32,7 +32,7 @@
 }
 
 .title {
-  font-size: 30px;
+  font-size: 30px !important;
   @apply text-th-primary !important;
 }
 

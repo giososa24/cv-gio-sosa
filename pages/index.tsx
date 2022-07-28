@@ -5,13 +5,17 @@ import MainLayout from 'components/Layouts/MainLayout'
 import PresentationCard from 'components/PresentationCard'
 import CardContent from 'components/CardContent'
 import frontEndItems from 'components/CardContent/frontEndItems'
+import backEndItems from 'components/CardContent/backEndItems'
 
 const Home: NextPage = () => {
   return (
     <MainLayout section="Inicio">
       <PresentationCard />
-      <div data-aos="fade">
+      <div data-aos="fade-left">
         <CardContent collection={frontEndItems} />
+      </div>
+      <div data-aos="fade-right">
+        <CardContent collection={backEndItems} />
       </div>
     </MainLayout>
   )

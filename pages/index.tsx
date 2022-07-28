@@ -10,7 +10,9 @@ const Home: NextPage = () => {
   return (
     <MainLayout section="Inicio">
       <PresentationCard />
-      <CardContent collection={frontEndItems} />
+      <div data-aos="fade">
+        <CardContent collection={frontEndItems} />
+      </div>
     </MainLayout>
   )
 }

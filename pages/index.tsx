@@ -7,6 +7,7 @@ import CardContent from 'components/CardContent'
 import frontEndItems from 'components/CardContent/frontEndItems'
 import backEndItems from 'components/CardContent/backEndItems'
 import connectionProtocolsItems from 'components/CardContent/connectionProtocolsItems'
+import deploymentItems from 'components/CardContent/deploymentItems'
 
 const Home: NextPage = () => {
   return (
@@ -20,6 +21,9 @@ const Home: NextPage = () => {
       </div>
       <div data-aos="fade-left">
         <CardContent collection={connectionProtocolsItems} />
+      </div>
+      <div data-aos="fade-right">
+        <CardContent collection={deploymentItems} />
       </div>
     </MainLayout>
   )

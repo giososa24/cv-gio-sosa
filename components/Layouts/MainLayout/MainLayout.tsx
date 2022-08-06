@@ -6,6 +6,7 @@ import MainLayoutProps from './MainLayout.types'
 import classes from './MainLayout.module.css'
 import Nabvar from 'components/Nabvar'
 import ScrollToTop from 'components/ScrollToTop'
+import SocialLinks from 'components/SocialLinks'
 
 const MainLayout: FC<MainLayoutProps> = ({ children, section }) => {
   const { t } = useTranslation('Nabvar')
@@ -19,12 +20,13 @@ const MainLayout: FC<MainLayoutProps> = ({ children, section }) => {
         <meta name="description" content="Portafolio personal de Gio Sosa" />
         <meta
           name="keywords"
-          content="Giovanni Sosa, Gio Sosa, Portafolio de Gio Sosa, Gio, Sosa, CV de Gio Sosa"
+          content="Giovanni Sosa, Gio Sosa, Portafolio de Gio Sosa, Gio, Sosa, CV de Gio Sosa, gio-sosa"
         />
         <meta name="author" content="Giovanni Abraham Sosa de la Cruz" />
         <meta name="copyright" content="Giovanni Abraham Sosa de la Cruz" />
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="thumbnail" content={urlImage} />
 
         {/* <!-- MS Tile - for Microsoft apps--> */}
         <meta name="msapplication-TileImage" content={urlImage} />
@@ -55,6 +57,7 @@ const MainLayout: FC<MainLayoutProps> = ({ children, section }) => {
 
       <main className={classes.container}>
         <Box className={classes['children-container']}>{children}</Box>
+        <SocialLinks />
         <ScrollToTop />
       </main>
     </div>

@@ -4,12 +4,23 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import MainLayout from 'components/Layouts/MainLayout'
 import PresentationCard from 'components/PresentationCard'
 import CardContent from 'components/CardContent'
+import frontEndItems from 'components/CardContent/frontEndItems'
+import backEndItems from 'components/CardContent/backEndItems'
+import webSocketsItems from 'components/CardContent/webSocketsItems'
 
 const Home: NextPage = () => {
   return (
     <MainLayout section="Inicio">
       <PresentationCard />
-      <CardContent />
+      <div data-aos="fade-left">
+        <CardContent collection={frontEndItems} />
+      </div>
+      <div data-aos="fade-right">
+        <CardContent collection={backEndItems} />
+      </div>
+      <div data-aos="fade-left">
+        <CardContent collection={webSocketsItems} />
+      </div>
     </MainLayout>
   )
 }

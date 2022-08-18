@@ -28,7 +28,7 @@
 
 .handImage {
   padding: 10px !important;
-  animation: greeting 0.7s linear 3;
+  /* animation: greeting 0.7s linear 3; */
 }
 
 .title {

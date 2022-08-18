@@ -9,6 +9,7 @@ import backEndItems from 'components/CardContent/backEndItems'
 import connectionProtocolsItems from 'components/CardContent/connectionProtocolsItems'
 import deploymentItems from 'components/CardContent/deploymentItems'
 import databasesItems from 'components/CardContent/databaseItems'
+import developmentToolsItems from 'components/CardContent/developmentTools'
 
 const Home: NextPage = () => {
   return (
@@ -20,11 +21,14 @@ const Home: NextPage = () => {
       <div data-aos="fade-right">
         <CardContent collection={backEndItems} />
       </div>
-      <div data-aos="fade-right">
+      <div data-aos="fade-left">
         <CardContent collection={databasesItems} />
       </div>
-      <div data-aos="fade-left">
+      <div data-aos="fade-right">
         <CardContent collection={connectionProtocolsItems} />
+      </div>
+      <div data-aos="fade-left">
+        <CardContent collection={developmentToolsItems} />
       </div>
       <div data-aos="fade-right">
         <CardContent collection={deploymentItems} />

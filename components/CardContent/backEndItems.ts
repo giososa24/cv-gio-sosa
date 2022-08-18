@@ -1,9 +1,9 @@
 import { CollectionType } from './CardContent.types'
-import CSharpLogo from 'assets/images/csharp-logo.png'
-import NetCoreLogo from 'assets/images/net-core-logo.png'
-import NodeJSLogo from 'assets/images/node-js-logo.png'
-import NestJSLogo from 'assets/images/nest-js-logo.png'
-import TSLogo from 'assets/images/ts-logo.png'
+import CSharpLogo from 'assets/images/backend/csharp-logo.png'
+import NetCoreLogo from 'assets/images/backend/net-core-logo.png'
+import NodeJSLogo from 'assets/images/backend/node-js-logo.png'
+import NestJSLogo from 'assets/images/backend/nest-js-logo.png'
+import TSLogo from 'assets/images/backend/ts-logo.png'
 
 const backEndItems: CollectionType = {
   title: 'Backend',

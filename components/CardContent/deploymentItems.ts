@@ -1,10 +1,10 @@
 import { CollectionType } from './CardContent.types'
-import GithubLogo from 'assets/images/github-logo.png'
-import HerokuLogo from 'assets/images/heroku-logo.png'
-import NginxLogo from 'assets/images/nginx-logo.png'
-import GALogo from 'assets/images/ga-logo.png'
-import DockerLogo from 'assets/images/docker-logo.png'
-import VercelLogo from 'assets/images/vercel-logo.png'
+import GithubLogo from 'assets/images/deployment/github-logo.png'
+import HerokuLogo from 'assets/images/deployment/heroku-logo.png'
+import NginxLogo from 'assets/images/deployment/nginx-logo.png'
+import GALogo from 'assets/images/deployment/ga-logo.png'
+import DockerLogo from 'assets/images/deployment/docker-logo.png'
+import VercelLogo from 'assets/images/deployment/vercel-logo.png'
 
 const deploymentItems: CollectionType = {
   title: 'Despliegues',

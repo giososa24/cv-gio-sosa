@@ -1,8 +1,8 @@
 import { CollectionType } from './CardContent.types'
-import SocketIoLogo from 'assets/images/socketio-logo.png'
-import GraphqlLogo from 'assets/images/graphql-logo.png'
-import SignalRLogo from 'assets/images/signalr-logo.png'
-import ApiRestLogo from 'assets/images/api-rest-logo.png'
+import SocketIoLogo from 'assets/images/connectionProtocol/socketio-logo.png'
+import GraphqlLogo from 'assets/images/connectionProtocol/graphql-logo.png'
+import SignalRLogo from 'assets/images/connectionProtocol/signalr-logo.png'
+import ApiRestLogo from 'assets/images/connectionProtocol/api-rest-logo.png'
 
 const connectionProtocolsItems: CollectionType = {
   title: 'Protocolos de conexión',

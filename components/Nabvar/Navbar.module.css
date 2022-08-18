@@ -17,7 +17,7 @@
   @apply flex flex-row gap-2 items-center;
 }
 
-@media only screen and (max-width: 675px) {
+@media only screen and (max-width: 699px) {
   .logo-container {
     width: 150px;
     height: 60px;

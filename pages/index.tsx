@@ -6,7 +6,8 @@ import PresentationCard from 'components/PresentationCard'
 import CardContent from 'components/CardContent'
 import frontEndItems from 'components/CardContent/frontEndItems'
 import backEndItems from 'components/CardContent/backEndItems'
-import webSocketsItems from 'components/CardContent/webSocketsItems'
+import connectionProtocolsItems from 'components/CardContent/connectionProtocolsItems'
+import deploymentItems from 'components/CardContent/deploymentItems'
 
 const Home: NextPage = () => {
   return (
@@ -19,7 +20,10 @@ const Home: NextPage = () => {
         <CardContent collection={backEndItems} />
       </div>
       <div data-aos="fade-left">
-        <CardContent collection={webSocketsItems} />
+        <CardContent collection={connectionProtocolsItems} />
+      </div>
+      <div data-aos="fade-right">
+        <CardContent collection={deploymentItems} />
       </div>
     </MainLayout>
   )

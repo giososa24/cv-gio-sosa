@@ -14,7 +14,9 @@ import developmentToolsItems from 'components/CardContent/developmentTools'
 const Home: NextPage = () => {
   return (
     <MainLayout section="Inicio">
-      <PresentationCard />
+      <div data-aos="zoom-out">
+        <PresentationCard />
+      </div>
       <div data-aos="fade-up-right">
         <CardContent collection={frontEndItems} />
       </div>

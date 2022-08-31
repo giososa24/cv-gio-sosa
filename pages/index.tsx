@@ -15,22 +15,22 @@ const Home: NextPage = () => {
   return (
     <MainLayout section="Inicio">
       <PresentationCard />
-      <div data-aos="fade-left">
+      <div data-aos="fade-up-right">
         <CardContent collection={frontEndItems} />
       </div>
-      <div data-aos="fade-right">
+      <div data-aos="fade-up">
         <CardContent collection={backEndItems} />
       </div>
-      <div data-aos="fade-left">
+      <div data-aos="zoom-in">
         <CardContent collection={databasesItems} />
       </div>
-      <div data-aos="fade-right">
+      <div data-aos="fade-down">
         <CardContent collection={connectionProtocolsItems} />
       </div>
-      <div data-aos="fade-left">
+      <div data-aos="fade-down-right">
         <CardContent collection={developmentToolsItems} />
       </div>
-      <div data-aos="fade-right">
+      <div data-aos="slide-up">
         <CardContent collection={deploymentItems} />
       </div>
     </MainLayout>

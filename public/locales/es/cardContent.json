@@ -8,5 +8,5 @@
   "database-description": "Para base de datos relacionales prefiero Postgres porque es software libre, también he utilizado SQL Server, base de datos no relaciones conozco MongoDB.",
   "connection-protocol-description": "Desarrollo de APIs con graphql y REST y para websocket utilizo socket.io con Nest Js y SignalR con .Net.",
   "development-tools-description": "Para probar la funcionalidad de las APIs utilizo Insomnia o Postman, para el desarrollo de .Net utilizo Visual Studio y para Nest, React o Angular utilizo Visual Studio Code.",
-  "deployment-tools-description": ""
+  "deployment-tools-description": "Para publicar mis aplicaciones utilizo Github pages, Heroku o Vercel a través de Github actions, también tengo el conocimiento para configurar un servidor con Nginx."
 }

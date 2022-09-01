@@ -12,6 +12,7 @@ import TailwindLogo from 'assets/images/frontend/tailwind-logo.png'
 import HugoLogo from 'assets/images/frontend/hugo-logo.png'
 import JSLogo from 'assets/images/frontend/js-logo.png'
 import TSLogo from 'assets/images/frontend/ts-logo.png'
+import CypressLogo from 'assets/images/frontend/cypress-logo.png'
 
 const frontEndItems: CollectionType = {
   title: 'Frontend',
@@ -93,6 +94,12 @@ const frontEndItems: CollectionType = {
       element: TSLogo,
       alt: 'ts-logo',
       width: '110px',
+      heigth: '120px',
+    },
+    {
+      element: CypressLogo,
+      alt: 'cypress-logo',
+      width: '120px',
       heigth: '120px',
     },
   ],

@@ -17,7 +17,19 @@ const CardContent: FC<CardContentProps> = ({ collection }) => {
       </div>
       <div className={classes['description-container']}>
         <Typography fontStyle="italic">
-          <Trans i18nKey={t(keyDescription)} />
+          <Trans
+            i18nKey={t(keyDescription)}
+            components={{
+              a: (
+                <a
+                  style={{ textDecoration: 'underline' }}
+                  target="_blank"
+                  href="https://github.com/giososa24/cv-gio-sosa"
+                  rel="noreferrer"
+                />
+              ),
+            }}
+          />
         </Typography>
       </div>
       <div className={classes['logo-container']}>

@@ -15,6 +15,7 @@ import TSLogo from 'assets/images/frontend/ts-logo.png'
 
 const frontEndItems: CollectionType = {
   title: 'Frontend',
+  keyDescription: 'front-end-description',
   items: [
     {
       element: ReactLogo,

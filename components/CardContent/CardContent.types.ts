@@ -9,6 +9,7 @@ type ItemType = {
 
 export type CollectionType = {
   title: string
+  keyDescription: string
   items: ItemType[]
 }
 

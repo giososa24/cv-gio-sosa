@@ -1,19 +1,24 @@
 import React, { FC } from 'react'
 import { Typography } from '@mui/material'
 import Image from 'next/image'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import classes from './CardContent.module.css'
 import CardContentProps from './CardContent.types'
 
 const CardContent: FC<CardContentProps> = ({ collection }) => {
-  const { title, items } = collection
-  const { t } = useTranslation('common')
+  const { title, items, keyDescription } = collection
+  const { t } = useTranslation('cardContent')
 
   return (
     <div className={classes['card-content']}>
       <div style={{ width: 'max-content' }}>
         <Typography className={classes.title}>{t(title)}</Typography>
         <div className={classes['title-line']} />
+      </div>
+      <div className={classes['description-container']}>
+        <Typography fontStyle="italic">
+          <Trans i18nKey={t(keyDescription)} />
+        </Typography>
       </div>
       <div className={classes['logo-container']}>
         {items.map(({ element, alt, width, heigth }, i) => (

@@ -6,6 +6,10 @@
   @apply border-th-background-contrast bg-gradient-to-r from-th-background to-th-background-paper;
 }
 
+.description-container {
+  margin: 25px 20px;
+}
+
 .title {
   margin: -30px 10px 15px !important;
   width: max-content !important;

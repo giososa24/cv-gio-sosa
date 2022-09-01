@@ -4,6 +4,8 @@ import NetCoreLogo from 'assets/images/backend/net-core-logo.png'
 import NodeJSLogo from 'assets/images/backend/node-js-logo.png'
 import NestJSLogo from 'assets/images/backend/nest-js-logo.png'
 import TSLogo from 'assets/images/backend/ts-logo.png'
+import JWTLogo from 'assets/images/backend/jwt-logo.png'
+import KeycloakLogo from 'assets/images/backend/keycloak-logo.png'
 
 const backEndItems: CollectionType = {
   title: 'Backend',
@@ -36,6 +38,18 @@ const backEndItems: CollectionType = {
     {
       element: TSLogo,
       alt: 'ts-logo',
+      width: '110px',
+      heigth: '120px',
+    },
+    {
+      element: JWTLogo,
+      alt: 'jwt-logo',
+      width: '110px',
+      heigth: '120px',
+    },
+    {
+      element: KeycloakLogo,
+      alt: 'keycloack-logo',
       width: '110px',
       heigth: '120px',
     },

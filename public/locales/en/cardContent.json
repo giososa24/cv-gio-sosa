@@ -4,7 +4,7 @@
   "Herramientas de desarrollo": "Development tools",
   "Base de datos": "Databases",
   "front-end-description": "I specialize web pages developing using React <strong>using TypeScript</strong> and its variants such as React Native for mobile applications and Next Js to optimize SEO, <strong>this application was made with Next JS</strong>. Lately I haven't used Angular anymore, but I have knowledge to develop websites with said technology. I can develop landing pages using \"HUGO\" framework or just html, css and javascript. To style components I prefer <strong>Material UI combined with Tailwind CSS</strong> I have also used Bootstrap. To unit test e2e I've used Cypress.",
-  "back-end-description": "",
+  "back-end-description": "For backend I've knowledge in .Net using the C# language and Nest Js with TypeScript, for authentication I use JWT and I also manage keycloak.",
   "database-description": "",
   "connection-protocol-description": "",
   "development-tools-description": "",

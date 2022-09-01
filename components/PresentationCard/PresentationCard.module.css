@@ -18,12 +18,12 @@
 
 .greeting-container {
   margin-top: 15px;
-  display: flex;
-  grid-gap: 10px;
+  @apply grid md:flex md:gap-5 lg:gap-7 xl:gap-9;
 }
 
 .hand-container {
   min-width: 150px;
+  @apply text-center md:text-left;
 }
 
 .handImage {
@@ -32,13 +32,11 @@
 }
 
 .title {
-  font-size: 30px !important;
-  @apply text-th-primary !important;
+  @apply text-th-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-3 md:mb-5 !important;
 }
 
 .info {
-  text-align: justify;
-  @apply text-background;
+  @apply text-background text-justify text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl;
 }
 
 @keyframes greeting {
@@ -53,15 +51,5 @@
   }
   100% {
     transform: rotate(0deg);
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  .hand-container {
-    text-align: center;
-  }
-
-  .greeting-container {
-    display: grid;
   }
 }

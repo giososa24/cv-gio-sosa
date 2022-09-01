@@ -3,6 +3,7 @@
   border-radius: 10px;
   border: 1px solid;
   padding: 10px;
+  box-shadow: 8px 8px 8px -4px rgba(0, 0, 0, 0.29);
   @apply border-th-background-contrast bg-gradient-to-r from-th-background to-th-background-paper;
 }
 

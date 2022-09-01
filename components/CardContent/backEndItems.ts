@@ -7,6 +7,7 @@ import TSLogo from 'assets/images/backend/ts-logo.png'
 
 const backEndItems: CollectionType = {
   title: 'Backend',
+  keyDescription: 'back-end-description',
   items: [
     {
       element: CSharpLogo,

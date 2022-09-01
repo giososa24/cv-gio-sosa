@@ -6,6 +6,7 @@ import ApiRestLogo from 'assets/images/connectionProtocol/api-rest-logo.png'
 
 const connectionProtocolsItems: CollectionType = {
   title: 'Protocolos de conexión',
+  keyDescription: 'connection-protocol-description',
   items: [
     {
       element: GraphqlLogo,

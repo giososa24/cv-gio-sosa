@@ -6,6 +6,7 @@ import VSLogo from 'assets/images/developmentTools/visual-studio-logo.png'
 
 const developmentToolsItems: CollectionType = {
   title: 'Herramientas de desarrollo',
+  keyDescription: 'development-tools-description',
   items: [
     {
       element: InsominaLogo,

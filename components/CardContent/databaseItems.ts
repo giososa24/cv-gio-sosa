@@ -5,6 +5,7 @@ import PostgresLogo from 'assets/images/database/postgres-logo.png'
 
 const databasesItems: CollectionType = {
   title: 'Base de datos',
+  keyDescription: 'database-description',
   items: [
     {
       element: PostgresLogo,

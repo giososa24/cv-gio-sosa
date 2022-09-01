@@ -8,6 +8,7 @@ import VercelLogo from 'assets/images/deployment/vercel-logo.png'
 
 const deploymentItems: CollectionType = {
   title: 'Despliegues',
+  keyDescription: 'deployment-tools-description',
   items: [
     {
       element: GithubLogo,

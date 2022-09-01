@@ -19,7 +19,7 @@ const SocialLinks: FC = () => {
     <div className={classes.container}>
       {items.map(({ href, icon }, i) => (
         <Link key={`${href}-${i}`} href={href}>
-          <a>{icon}</a>
+          <a target="_blank">{icon}</a>
         </Link>
       ))}
     </div>

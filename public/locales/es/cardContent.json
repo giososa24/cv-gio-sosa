@@ -7,6 +7,6 @@
   "back-end-description": "Para backend tengo conocimientos en .Net utilizando el lenguaje C# y Nest Js con TypeScript, para la autenticación utilizo JWT y también se administrar keycloak.",
   "database-description": "Para base de datos relacionales prefiero Postgres porque es software libre, también he utilizado SQL Server, base de datos no relaciones conozco MongoDB.",
   "connection-protocol-description": "Desarrollo de APIs con graphql y REST y para websocket utilizo socket.io con Nest Js y SignalR con .Net.",
-  "development-tools-description": "",
+  "development-tools-description": "Para probar la funcionalidad de las APIs utilizo Insomnia o Postman, para el desarrollo de .Net utilizo Visual Studio y para Nest, React o Angular utilizo Visual Studio Code.",
   "deployment-tools-description": ""
 }

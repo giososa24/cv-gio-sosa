@@ -17,7 +17,14 @@ const CardContent: FC<CardContentProps> = ({ collection }) => {
       </div>
       <div className={classes['logo-container']}>
         {items.map(({ element, alt, width, heigth }, i) => (
-          <Image key={`${alt}-${i}`} src={element} alt={alt} width={width} height={heigth} />
+          <Image
+            key={`${alt}-${i}`}
+            src={element}
+            alt={alt}
+            width={width}
+            height={heigth}
+            priority
+          />
         ))}
       </div>
     </div>

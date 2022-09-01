@@ -24,6 +24,7 @@ const PresentationCard: FC = () => {
               alt="hello-hand"
               width="150px"
               height="150px"
+              priority
             />
           </Box>
           <Box>

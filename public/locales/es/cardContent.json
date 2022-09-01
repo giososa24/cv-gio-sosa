@@ -5,7 +5,7 @@
   "Base de datos": "Base de datos",
   "front-end-description": "Me especializo desarrollando páginas web utilizando React <strong>utilizando TypeScript</strong> y sus variantes como React Native para aplicaciones móviles y Next Js para optimizar el SEO, <strong>esta aplicación está elaborada con Next JS</strong>. Últimamente ya no he utilizado Angular, pero tengo los conocimientos para desarrollar sitios web con dicha tecnología. Puedo desarrollar landing pages utilizando el framework \"HUGO\" o simplemente html, css y javascript. Para estilizar componentes prefiero <strong>Material UI combinado con Tailwind CSS</strong> también he utilizado Bootstrap. Para pruebas unitarias e2e he utilizado Cypress.",
   "back-end-description": "Para backend tengo conocimientos en .Net utilizando el lenguaje C# y Nest Js con TypeScript, para la autenticación utilizo JWT y también se administrar keycloak.",
-  "database-description": "",
+  "database-description": "Para base de datos relacionales prefiero Postgres porque es software libre, también he utilizado SQL Server, base de datos no relaciones conozco MongoDB.",
   "connection-protocol-description": "",
   "development-tools-description": "",
   "deployment-tools-description": ""

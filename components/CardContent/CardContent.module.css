@@ -1,29 +1,30 @@
-.card-content {
-  margin: 2em 0;
-  border-radius: 10px;
-  border: 1px solid;
-  padding: 10px;
-  box-shadow: 8px 8px 8px -4px rgba(0, 0, 0, 0.29);
-  @apply border-th-background-contrast bg-gradient-to-r from-th-background to-th-background-paper;
+.title-container {
+  @apply flex items-center justify-end bg-th-primary rounded-r-full p-9 pr-16 h-24 sm:h-28 md:h-32 lg:h-36;
 }
 
-.description-container {
-  margin: 25px 20px;
+.title-container::before {
+  content: '';
+  top: 0%;
+  position: absolute;
+  width: 100vw;
+  left: -100vw;
+  @apply bg-th-primary h-24 sm:h-28 md:h-32 lg:h-36;
 }
 
 .title {
-  margin: -30px 10px 15px !important;
-  width: max-content !important;
-  padding: 0 10px !important;
-  font-size: 24px !important;
-  @apply text-th-primary !important;
+  @apply font-light text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
 }
 
-.title-line {
-  width: 100%;
-  height: 1px;
-  margin-top: -32px;
-  @apply bg-th-background;
+.items-container {
+  @apply border-2 border-th-primary p-3 mt-7;
+}
+
+.items-container::after {
+  content: '';
+  top: 0%;
+  position: absolute;
+  width: 2px;
+  @apply bg-th-primary h-[7.75rem] sm:h-[8.75rem] md:h-[9.75rem] lg:h-[10.75rem] left-[50%] lg:left-[40%];
 }
 
 .logo-container {

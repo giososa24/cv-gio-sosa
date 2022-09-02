@@ -5,7 +5,7 @@
 @layer base {
   html,
   .MuiTypography-root {
-    font-family: 'Comfortaa', cursive, system-ui, sans-serif;
+    font-family: 'Comfortaa', cursive, system-ui, sans-serif !important;
   }
 }
 

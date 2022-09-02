@@ -5,13 +5,17 @@ import { Trans, useTranslation } from 'next-i18next'
 import classes from './CardContent.module.css'
 import CardContentProps from './CardContent.types'
 
-const CardContent: FC<CardContentProps> = ({ collection }) => {
+const CardContent: FC<CardContentProps> = ({ collection, variant }) => {
   const { title, items, keyDescription } = collection
   const { t } = useTranslation('cardContent')
 
   return (
     <div className="w-full lg:w-10/12 mt-16">
-      <div className={classes['title-container']}>
+      <div
+        className={`${classes['title-container']} ${
+          variant === 'right' ? classes['title-container-right'] : classes['title-container-left']
+        }`}
+      >
         <Typography className={classes.title}>{t(title)}</Typography>
       </div>
       <div className={classes['items-container']}>

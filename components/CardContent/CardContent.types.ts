@@ -15,6 +15,7 @@ export type CollectionType = {
 
 type CardContentProps = {
   collection: CollectionType
+  variant: 'right' | 'left'
 }
 
 export default CardContentProps

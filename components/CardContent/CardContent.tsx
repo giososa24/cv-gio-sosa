@@ -10,7 +10,9 @@ const CardContent: FC<CardContentProps> = ({ collection, variant }) => {
   const { t } = useTranslation('cardContent')
 
   return (
-    <div className="w-full lg:w-10/12 mt-16">
+    <div
+      className={`w-full lg:w-10/12 mt-16 ${variant === 'left' ? 'ml-0' : 'ml-0 lg:ml-[16.67%]'}`}
+    >
       <div
         className={`${classes['title-container']} ${
           variant === 'right' ? classes['title-container-right'] : classes['title-container-left']

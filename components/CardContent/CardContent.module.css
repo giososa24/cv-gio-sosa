@@ -9,7 +9,7 @@
   @apply rounded-l-full justify-start pl-16;
 }
 
-.title-container-left::before {
+/* .title-container-left::before {
   content: '';
   top: 0%;
   position: absolute;
@@ -25,7 +25,7 @@
   width: 100vw;
   right: calc(-100vw + 17%);
   @apply bg-th-primary h-24 sm:h-28 md:h-32 lg:h-36;
-}
+} */
 
 .title {
   @apply font-light text-3xl sm:text-4xl md:text-5xl lg:text-6xl !important;

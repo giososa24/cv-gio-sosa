@@ -44,6 +44,13 @@
   @apply bg-th-primary h-[7.75rem] sm:h-[8.75rem] md:h-[9.75rem] lg:h-[10.75rem] left-[50%] lg:left-[40%];
 }
 
+.items-container-right {
+}
+
+.items-container-right::after {
+  @apply lg:left-[60%] !important;
+}
+
 .logo-container {
   margin: 20px 0 10px;
   display: grid;

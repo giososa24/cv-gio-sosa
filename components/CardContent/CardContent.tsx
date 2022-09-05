@@ -20,7 +20,11 @@ const CardContent: FC<CardContentProps> = ({ collection, variant }) => {
       >
         <Typography className={classes.title}>{t(title)}</Typography>
       </div>
-      <div className={classes['items-container']}>
+      <div
+        className={`${classes['items-container']} ${
+          variant === 'right' ? classes['items-container-right'] : ''
+        }`}
+      >
         <div className="p-3">
           <Typography fontStyle="italic" className="text-base md:text-lg">
             <Trans

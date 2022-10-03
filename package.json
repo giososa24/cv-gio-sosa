@@ -12,7 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
-    "@mui/icons-material": "^5.10.3",
+    "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.5",
     "@svgr/webpack": "^6.3.1",
     "aos": "^2.3.4",
@@ -22,7 +22,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-resize-detector": "^7.1.2",
-    "sharp": "^0.31.0"
+    "sharp": "^0.31.1"
   },
   "lint-staged": {
     "./**/*.{js,jsx,ts,tsx}": [
@@ -45,7 +45,7 @@
     "autoprefixer": "^10.4.9",
     "eslint": "^8.23.1",
     "eslint-config-import": "^0.13.0",
-    "eslint-config-next": "12.3.0",
+    "eslint-config-next": "12.3.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",

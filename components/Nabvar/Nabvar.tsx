@@ -68,10 +68,8 @@ const Nabvar: FC = () => {
         </IconButton>
       )}
       <div className={classes['logo-container']}>
-        <Link href="/">
-          <a className={classes.logo}>
-            <ImageLogo />
-          </a>
+        <Link className={classes.logo} href="/">
+          <ImageLogo />
         </Link>
       </div>
       {(width ?? 0) > 675 && (

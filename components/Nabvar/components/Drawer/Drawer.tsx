@@ -60,14 +60,12 @@ const Drawer: FC<DrawerProps> = ({ isOpen, toggleDrawer }) => {
         <List>
           {menuItems.map(({ label, icon, href }) => (
             <Link key={label} href={href}>
-              <a>
-                <ListItem disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>{renderIcon(icon)}</ListItemIcon>
-                    <ListItemText primary={t(label)} />
-                  </ListItemButton>
-                </ListItem>
-              </a>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>{renderIcon(icon)}</ListItemIcon>
+                  <ListItemText primary={t(label)} />
+                </ListItemButton>
+              </ListItem>
             </Link>
           ))}
         </List>

@@ -10,8 +10,12 @@ const ActiveLink: FC<ActiveLinkProps> = ({ link, href }) => {
   const { i18n } = useTranslation()
 
   return (
-    <Link href={href} locale={i18n.language}>
-      <a className={asPath === href ? classes['link-active'] : classes.link}>{link}</a>
+    <Link
+      href={href}
+      className={asPath === href ? classes['link-active'] : classes.link}
+      locale={i18n.language}
+    >
+      {link}
     </Link>
   )
 }

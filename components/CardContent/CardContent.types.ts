@@ -3,8 +3,8 @@ import { StaticImageData } from 'next/image'
 type ItemType = {
   element: StaticImageData
   alt: string
-  width: string
-  heigth: string
+  width: number
+  heigth: number
 }
 
 export type CollectionType = {

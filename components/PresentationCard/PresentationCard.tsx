@@ -22,8 +22,8 @@ const PresentationCard: FC = () => {
               src={HelloHand}
               className={classes.handImage}
               alt="hello-hand"
-              width="150px"
-              height="150px"
+              width={150}
+              height={150}
               priority
             />
           </Box>

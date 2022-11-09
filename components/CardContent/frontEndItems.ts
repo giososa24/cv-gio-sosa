@@ -13,6 +13,7 @@ import HugoLogo from 'assets/images/frontend/hugo-logo.png'
 import JSLogo from 'assets/images/frontend/js-logo.png'
 import TSLogo from 'assets/images/frontend/ts-logo.png'
 import CypressLogo from 'assets/images/frontend/cypress-logo.png'
+import JestLogo from 'assets/images/frontend/jest-logo.png'
 
 const frontEndItems: CollectionType = {
   title: 'Frontend',
@@ -99,6 +100,12 @@ const frontEndItems: CollectionType = {
     {
       element: CypressLogo,
       alt: 'cypress-logo',
+      width: 120,
+      heigth: 120,
+    },
+    {
+      element: JestLogo,
+      alt: 'jest-logo',
       width: 120,
       heigth: 120,
     },

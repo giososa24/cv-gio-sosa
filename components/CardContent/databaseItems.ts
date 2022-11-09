@@ -10,20 +10,20 @@ const databasesItems: CollectionType = {
     {
       element: PostgresLogo,
       alt: 'postgres-logo',
-      width: '120px',
-      heigth: '120px',
+      width: 120,
+      heigth: 120,
     },
     {
       element: MongoDBLogo,
       alt: 'mongodb-logo',
-      width: '120px',
-      heigth: '120px',
+      width: 120,
+      heigth: 120,
     },
     {
       element: SQLServerLogo,
       alt: 'sql-server-logo',
-      width: '110px',
-      heigth: '120px',
+      width: 110,
+      heigth: 120,
     },
   ],
 }

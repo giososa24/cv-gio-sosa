@@ -34,7 +34,7 @@
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.4.3",
+    "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.3",
     "@types/aos": "^3.0.4",
     "@types/node": "18.13.0",

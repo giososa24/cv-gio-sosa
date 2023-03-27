@@ -22,7 +22,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-resize-detector": "^8.0.4",
-    "sharp": "^0.31.3"
+    "sharp": "^0.32.0"
   },
   "lint-staged": {
     "./**/*.{js,jsx,ts,tsx}": [

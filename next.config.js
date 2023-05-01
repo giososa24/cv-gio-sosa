@@ -5,7 +5,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const nextConfig = {
   reactStrictMode: true,
   i18n,
-  webpack5: true,
+  //webpack5: true,
   webpack: config => {
     config.resolve.fallback = { fs: false }
     if (config.resolve.plugins) {

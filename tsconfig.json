@@ -19,7 +19,7 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "pretty": true,
-    "keyofStringsOnly": true
+    //"keyofStringsOnly": true
   },
   "include": [
     "next-env.d.ts",

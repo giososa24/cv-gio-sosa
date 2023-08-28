@@ -5,7 +5,7 @@ on:
       - master
   workflow_dispatch: 
     inputs:
-      name:
+      select-test:
         type: choice
         description: description input
         options:
@@ -16,7 +16,7 @@ on:
 
 jobs:
   build:
-    if: ${{inputs.name.options == 'primera'}}
+    if: ${{inputs.select-test == 'primera'}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -40,7 +40,7 @@ jobs:
           yarn build
 
   build-2:
-    if: ${{inputs.name.options == 'segunda'}}
+    if: ${{inputs.select-test == 'segunda'}} || ${{ github.event == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code

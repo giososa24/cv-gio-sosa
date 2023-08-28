@@ -4,9 +4,19 @@ on:
     branches:
       - master
   workflow_dispatch: 
+    inputs:
+      name:
+        type: choice
+        description: description input
+        options:
+        - primera
+        - segunda
+
+
 
 jobs:
   build:
+    if: ${{inputs.name.options == 'primera'}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -30,6 +40,7 @@ jobs:
           yarn build
 
   build-2:
+    if: ${{inputs.name.options == 'segunda'}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code

@@ -44,7 +44,7 @@ jobs:
           yarn build
 
   build-2:
-    if: ${{inputs.select-test == 'all'}} || ${{inputs.select-test == 'qa'}} || ${{ github.event == 'pull_request' }}
+    if: (${{inputs.select-test}} -eq 'all') || (${{inputs.select-test}} -eq 'qa') || (${{ github.event }} -eq 'pull_request')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code

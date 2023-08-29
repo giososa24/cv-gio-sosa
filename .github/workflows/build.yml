@@ -7,16 +7,18 @@ on:
     inputs:
       select-test:
         type: choice
-        description: description input
+        description: Select environment (Default all)
         options:
-        - primera
-        - segunda
+          - all
+          - staging
+          - qa
+          - dev
 
 
 
 jobs:
   build:
-    if: ${{inputs.select-test == 'primera'}} || ${{ github.event == 'pull_request' }}
+    if: ${{inputs.select-test == 'all'}} || ${{inputs.select-test == 'staging'}} || ${{ github.event == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -40,7 +42,31 @@ jobs:
           yarn build
 
   build-2:
-    if: ${{inputs.select-test == 'segunda'}} || ${{ github.event == 'pull_request' }}
+    if: ${{inputs.select-test == 'all'}} || ${{inputs.select-test == 'qa'}} || ${{ github.event == 'pull_request' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+ 
+      - name: Cache Dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
+ 
+      - name: Setup Node 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+ 
+      - name: Build
+        run: |
+          yarn install --frozen-lockfile
+          yarn build
+
+  build-3:
+    if: ${{inputs.select-test == 'all'}} || ${{inputs.select-test == 'dev'}} || ${{ github.event == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code

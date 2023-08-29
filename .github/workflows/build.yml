@@ -1,8 +1,6 @@
 name: Build
 on: 
   pull_request:
-    types: 
-      - opened
     branches:
       - master
   workflow_dispatch: 
@@ -25,7 +23,7 @@ jobs:
     if: ${{(inputs.env-select == 'all') || (inputs.env-select == 'staging') }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Conditional ${{(inputs.env-select == 'all') || (inputs.env-select == 'staging') || (github.event == 'pull_request') }}"
+      - run: echo "Conditional ${{(inputs.env-select == 'all') || (inputs.env-select == 'staging') }}"
       - name: Checkout Code
         uses: actions/checkout@v3
  
@@ -46,11 +44,11 @@ jobs:
           yarn install --frozen-lockfile
           yarn build
 
-  build-2:
-    if: ${{(inputs.env-select == 'all') || (inputs.env-select == 'qa') || (github.event == 'pull_request') }}
+  build-qa:
+    if: ${{(inputs.env-select == 'all') || (inputs.env-select == 'qa') || github.event.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Conditional ${{(inputs.env-select == 'all') || (inputs.env-select == 'qa') || (github.event == 'pull_request') }}"
+      - run: echo "Conditional ${{(inputs.env-select == 'all') || (inputs.env-select == 'qa') || github.event.pull_request }}"
       - name: Checkout Code
         uses: actions/checkout@v3
  

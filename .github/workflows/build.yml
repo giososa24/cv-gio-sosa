@@ -3,91 +3,24 @@ on:
   pull_request:
     branches:
       - master
-  workflow_dispatch: 
-    inputs:
-      env-select:
-        required: true
-        default: 'all'
-        description: Select environment (Default all)
-        type: choice
-        options:
-          - all
-          - staging
-          - qa
-          - dev
-
-
-
 jobs:
   build:
-    if: ${{(inputs.env-select == 'all') || (inputs.env-select == 'staging') || (github.event == 'pull_request') }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Conditional ${{(inputs.env-select == 'all') || (inputs.env-select == 'staging') || (github.event == 'pull_request') }}"
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
  
       - name: Cache Dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v1
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: ${{ runner.os }}-node-
  
-      - name: Setup Node 18
-        uses: actions/setup-node@v3
+      - name: Setup Node 16
+        uses: actions/setup-node@v2
         with:
-          node-version: '18'
- 
-      - name: Build
-        run: |
-          yarn install --frozen-lockfile
-          yarn build
-
-  build-2:
-    if: ${{(inputs.env-select == 'all') || (inputs.env-select == 'qa') || (github.event == 'pull_request') }}
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Conditional ${{(inputs.env-select == 'all') || (inputs.env-select == 'qa') || (github.event == 'pull_request') }}"
-      - name: Checkout Code
-        uses: actions/checkout@v3
- 
-      - name: Cache Dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-node-
- 
-      - name: Setup Node 18
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
- 
-      - name: Build
-        run: |
-          yarn install --frozen-lockfile
-          yarn build
-
-  build-3:
-    if: ${{(inputs.env-select == 'all') || (inputs.env-select == 'dev') || (github.event == 'pull_request') }}
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Conditional ${{(inputs.env-select == 'all') || (inputs.env-select == 'dev') || (github.event == 'pull_request') }}"
-      - name: Checkout Code
-        uses: actions/checkout@v3
- 
-      - name: Cache Dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-node-
- 
-      - name: Setup Node 18
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+          node-version: '16'
  
       - name: Build
         run: |

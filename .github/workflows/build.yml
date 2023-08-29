@@ -6,8 +6,10 @@ on:
   workflow_dispatch: 
     inputs:
       select-test:
-        type: choice
+        required: true
+        default: 'all'
         description: Select environment (Default all)
+        type: choice
         options:
           - all
           - staging
@@ -18,7 +20,7 @@ on:
 
 jobs:
   build:
-    if: ${{inputs.select-test == 'all'}} || ${{inputs.select-test == 'staging'}} || ${{ github.event == 'pull_request' }}
+    if: (${{inputs.select-test}} -eq 'all') || (${{inputs.select-test}} -eq 'staging') || (${{ github.event }} -eq 'pull_request')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code

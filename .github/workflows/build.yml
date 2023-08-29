@@ -23,7 +23,7 @@ jobs:
     if: (${{inputs.env-select}} -eq 'all') || (${{inputs.env-select}} -eq 'staging') || (${{ github.event }} -eq 'pull_request')
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Notifying of ${{ inputs.env-select }} deployment"
+      - run: echo "Conditional ${{inputs.env-select == 'all'}}
       - name: Checkout Code
         uses: actions/checkout@v3
  

@@ -44,7 +44,7 @@ jobs:
           yarn install --frozen-lockfile
           yarn build
 
-  build-2:
+  build-qa:
     if: ${{(inputs.env-select == 'all') || (inputs.env-select == 'qa') || github.event.pull_request }}
     runs-on: ubuntu-latest
     steps:

@@ -1,8 +1,6 @@
 name: Build
 on: 
   pull_request:
-    types: 
-      - opened
     branches:
       - master
   workflow_dispatch: 
@@ -47,10 +45,10 @@ jobs:
           yarn build
 
   build-2:
-    if: ${{(inputs.env-select == 'all') || (inputs.env-select == 'qa') || (github.event == 'pull_request') }}
+    if: ${{(inputs.env-select == 'all') || (inputs.env-select == 'qa') || github.event.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Conditional ${{(inputs.env-select == 'all') || (inputs.env-select == 'qa') || (github.event == 'pull_request') }}"
+      - run: echo "Conditional ${{(inputs.env-select == 'all') || (inputs.env-select == 'qa') || github.event.pull_request }}"
       - name: Checkout Code
         uses: actions/checkout@v3
  

@@ -3,6 +3,9 @@ on:
   pull_request:
     branches:
       - master
+  push:
+    branches:
+      - master
   workflow_dispatch: 
     inputs:
       env-select:
@@ -20,7 +23,7 @@ on:
 
 jobs:
   build:
-    if: ${{(inputs.env-select == 'all') || (inputs.env-select == 'staging') || github.event.pull_request }}
+    if: ${{(inputs.env-select == 'all') || (inputs.env-select == 'staging') || github.event.pull_request || github.event.pusher }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "Conditional new test ${{(inputs.env-select == 'all') || (inputs.env-select == 'staging') || github.event.pull_request}}"

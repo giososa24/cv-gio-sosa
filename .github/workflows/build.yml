@@ -23,7 +23,7 @@ jobs:
     if: ${{(inputs.env-select == 'all') || (inputs.env-select == 'staging') || github.event.pull_request }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Conditional ${{(inputs.env-select == 'all') || (inputs.env-select == 'staging') || github.event.pull_request}}"
+      - run: echo "Conditional new test ${{(inputs.env-select == 'all') || (inputs.env-select == 'staging') || github.event.pull_request}}"
       - name: Checkout Code
         uses: actions/checkout@v3
  

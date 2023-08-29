@@ -69,7 +69,7 @@ jobs:
           yarn install --frozen-lockfile
           yarn build
 
-  build-3:
+  build-dev:
     if: ${{(inputs.env-select == 'all') || (inputs.env-select == 'dev') || (github.event == 'pull_request') }}
     runs-on: ubuntu-latest
     steps:

@@ -14,7 +14,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.1",
     "@mui/material": "^5.14.6",
-    "@svgr/webpack": "^8.0.1",
+    "@svgr/webpack": "^8.1.0",
     "aos": "^2.3.4",
     "next": "13.4.19",
     "next-i18next": "^12.1.0",

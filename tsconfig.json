@@ -1,38 +1,26 @@
 {
   "compilerOptions": {
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "sourceMap": true,
-    "baseUrl": "./src",
-    "target": "es5",
-    "alwaysStrict": true,
-    "downlevelIteration": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
-    "lib": [
-      "es6",
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "pretty": true,
-    "keyofStringsOnly": true,
     "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "target": "ES2017",
+    "module": "ES2022",
+    "lib": ["es2022", "DOM", "WebWorker", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "@builder.io/qwik",
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
     "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "incremental": true,
     "isolatedModules": true,
+    "outDir": "tmp",
     "noEmit": true,
-    "jsx": "react-jsx"
+    "types": ["node", "vite/client"],
+    "paths": {
+      "~/*": ["./src/*"]
+    }
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": ["node_modules"]
+  "files": ["./.eslintrc.cjs"],
+  "include": ["src", "./*.d.ts", "./*.config.ts"]
 }

@@ -2741,6 +2741,11 @@ queue-tick@^1.0.1:
   resolved "https://registry.yarnpkg.com/queue-tick/-/queue-tick-1.0.1.tgz#f6f07ac82c1fd60f82e098b417a80e52f1f4c142"
   integrity sha512-kJt5qhMxoszgU/62PLP1CJytzd2NKetjSRnyuj31fDd3Rlcz3fzlFdFLD1SItunPwyqEOkca6GbV612BWfaBag==
 
+qwik-speak@^0.15.3:
+  version "0.15.3"
+  resolved "https://registry.yarnpkg.com/qwik-speak/-/qwik-speak-0.15.3.tgz#b5f30f5479b65e9d0c8f2b4cc8e6ecb75a7ad068"
+  integrity sha512-Ryh9E7eqX19pn11bGaIYXbG20EkfQaGjltw29ot3zVhddK9I72Vj/F2WpKR/Q8q5fmQOfqxpglilRY2meMJHhw==
+
 range-parser@~1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"

@@ -44,5 +44,5 @@ jobs:
       with:
         host: '${{ secrets.CAPROVER_SERVER }}'
         password: '${{ secrets.CAPROVER_PASSWORD }}'
-        app: '${{ secrets.APP_NAME }}'
+        app: '${{ secrets.CAPROVER_APP_NAME }}'
         image: ${{ steps.meta.outputs.tags }}

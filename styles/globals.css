@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  .MuiTypography-root {
+    font-family: 'Comfortaa', cursive, system-ui, sans-serif !important;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
+  @apply bg-th-background;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.typewriter-tag {
+  color: rgb(81, 208, 247);
+}
+
+.typewriter-label {
+  color: rgb(199, 196, 39);
+}
+
+:root {
+  --primary: theme('colors.primary');
+  --secondary: theme('colors.secondary');
+  --error: theme('colors.error');
+  --warning: theme('colors.warning');
+  --info: theme('colors.info');
+  --success: theme('colors.success');
+  --background: theme('colors.background');
+  --background-contrast: theme('colors.background-dark');
+  --background-paper: theme('colors.background-paper');
+}
+
+[data-theme='dark'] {
+  --primary: theme('colors.primary-dark');
+  --secondary: theme('colors.secondary-dark');
+  --error: theme('colors.error-dark');
+  --warning: theme('colors.warning-dark');
+  --info: theme('colors.info-dark');
+  --success: theme('colors.success-dark');
+  --background: theme('colors.background-dark');
+  --background-contrast: theme('colors.background');
+  --background-paper: theme('colors.background-paper-dark');
+}
+
+/* MUI Overrides */
+.MuiSvgIcon-root {
+  @apply fill-th-background-contrast !important;
+}
+
+.MuiSelect-select,
+.MuiMenuItem-root,
+.MuiTypography-root {
+  @apply text-th-background-contrast !important;
+}
+
+.MuiPaper-root {
+  @apply bg-th-background-paper !important;
+}
+
+::-webkit-scrollbar {
+  width: 0.65em;
+  max-width: 0.65em;
+  height: 0.65em;
+  max-height: 0.65em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
+}

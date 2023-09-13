@@ -1,0 +1,9 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+  @apply bg-th-background;
+}
+
+.children-container {
+  padding: 15px;
+}

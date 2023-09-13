@@ -1,0 +1,26 @@
+.nav-container {
+  border-bottom: 2px solid;
+  @apply flex gap-3 px-3 border-b-th-primary;
+}
+
+.logo svg {
+  width: 150px;
+  height: 60px;
+  @apply fill-th-primary;
+}
+
+.items-container {
+  @apply flex flex-1 gap-3 items-center;
+}
+
+.language-container {
+  @apply flex flex-row gap-2 items-center;
+}
+
+@media only screen and (max-width: 699px) {
+  .logo-container {
+    width: 150px;
+    height: 60px;
+    @apply flex justify-center flex-1 fill-th-primary;
+  }
+}

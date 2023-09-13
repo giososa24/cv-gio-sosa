@@ -3,13 +3,13 @@
 }
 
 .lang-button {
-  @apply text-th-background-contrast bg-transparent w-6 min-w-0 h-5;
+  @apply text-th-background-contrast bg-transparent w-6 min-w-0 h-5 !important;
 }
 
 .lang-button:hover {
-  @apply bg-transparent;
+  @apply bg-transparent !important;
 }
 
 .lang-button-selected {
-  @apply text-th-primary font-bold;
+  @apply text-th-primary font-bold !important;
 }

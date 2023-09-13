@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { QwikLogo } from "../icons/qwik";
 import styles from "./header.module.css";
 import { ChangeLocale } from "~/components/change-locale/change-locale";
+import ChangeTheme from "~/components/change-theme";
 
 export default component$(() => {
   return (
@@ -12,6 +13,7 @@ export default component$(() => {
             <QwikLogo height={50} width={143} />
           </a>
         </div>
+        <ChangeTheme />
         <ChangeLocale />
         <ul>
           <li>

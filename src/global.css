@@ -14,7 +14,7 @@
  *
  */
 
-:root {
+/* :root {
   --qwik-dark-blue: #006ce9;
   --qwik-light-blue: #18b6f6;
   --qwik-light-purple: #ac7ff4;
@@ -22,6 +22,32 @@
   --qwik-dirty-black: #1d2033;
   --qwik-dark-background: #151934;
   --qwik-dark-text: #ffffff;
+} */
+
+:root {
+  --primary: theme('colors.primary');
+  --secondary: theme('colors.secondary');
+  --error: theme('colors.error');
+  --warning: theme('colors.warning');
+  --info: theme('colors.info');
+  --success: theme('colors.success');
+  --background: theme('colors.background');
+  --background-contrast: theme('colors.background-dark');
+  --background-paper: theme('colors.background-paper');
+  --qwik-dark-background: red;
+}
+
+[data-theme='dark'] {
+  --primary: theme('colors.primary-dark');
+  --secondary: theme('colors.secondary-dark');
+  --error: theme('colors.error-dark');
+  --warning: theme('colors.warning-dark');
+  --info: theme('colors.info-dark');
+  --success: theme('colors.success-dark');
+  --background: theme('colors.background-dark');
+  --background-contrast: theme('colors.background');
+  --background-paper: theme('colors.background-paper-dark');
+  --qwik-dark-background: #151934;
 }
 
 html {

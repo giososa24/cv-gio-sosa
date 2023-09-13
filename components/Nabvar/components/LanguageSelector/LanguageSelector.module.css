@@ -1,0 +1,15 @@
+.language-container {
+  @apply flex flex-row gap-2 items-center mr-4 lg:mr-8;
+}
+
+.lang-button {
+  @apply text-th-background-contrast bg-transparent w-6 min-w-0 h-5;
+}
+
+.lang-button:hover {
+  @apply bg-transparent;
+}
+
+.lang-button-selected {
+  @apply text-th-primary font-bold;
+}

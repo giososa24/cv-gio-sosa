@@ -1,14 +1,14 @@
 import { FC, memo, useCallback, useState } from 'react'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
-import { Language, Menu } from '@mui/icons-material'
-import { IconButton, MenuItem, Select, SelectChangeEvent } from '@mui/material'
+import { Menu } from '@mui/icons-material'
+import { IconButton } from '@mui/material'
 import { useResizeDetector } from 'react-resize-detector'
-import { useRouter } from 'next/router'
 import ActiveLink from './components/ActiveLink'
 import Drawer from './components/Drawer'
 import ThemeCharger from './components/ThemeCharger'
 import classes from './Navbar.module.css'
+import LanguageSelector from './components/LanguageSelector'
 import ImageLogo from 'assets/images/gio-sosa.svg'
 
 const menuItems = [
@@ -26,13 +26,9 @@ const menuItems = [
   },
 ]
 
-const languages = ['en', 'es']
-
 const Nabvar: FC = () => {
-  const { t, i18n } = useTranslation('Nabvar')
+  const { t } = useTranslation('Nabvar')
   const { width, ref } = useResizeDetector()
-  const { replace, asPath } = useRouter()
-  const [lang, setLang] = useState(i18n.language)
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleDrawer = useCallback(
@@ -47,16 +43,6 @@ const Nabvar: FC = () => {
       setIsOpen(open)
     },
     [],
-  )
-
-  const handleChange = useCallback(
-    (event: SelectChangeEvent): void => {
-      const language = event.target.value
-      setLang(language)
-      void i18n.changeLanguage(language)
-      void replace(asPath, asPath, { locale: language })
-    },
-    [asPath, i18n, replace],
   )
 
   return (
@@ -78,18 +64,9 @@ const Nabvar: FC = () => {
           ))}
         </div>
       )}
-      <div className="flex">
-        <div className={classes['language-container']}>
-          <Language />
-          <Select value={lang} variant="standard" onChange={handleChange} autoWidth>
-            {languages.map(_lang => (
-              <MenuItem key={_lang} value={_lang}>
-                {_lang}
-              </MenuItem>
-            ))}
-          </Select>
-        </div>
+      <div className="flex gap-3">
         <ThemeCharger />
+        <LanguageSelector />
       </div>
       <Drawer isOpen={isOpen} toggleDrawer={toggleDrawer} />
     </nav>

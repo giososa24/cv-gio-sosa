@@ -17,6 +17,7 @@
     "@mui/material": "^5.14.8",
     "@svgr/webpack": "^8.1.0",
     "aos": "^2.3.4",
+    "classnames": "^2.3.2",
     "next": "13.4.19",
     "next-i18next": "^12.1.0",
     "next-themes": "^0.2.1",

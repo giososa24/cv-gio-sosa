@@ -1,10 +1,7 @@
 .link {
-  font-size: 24px;
-  font-weight: 300;
+  @apply sm:text-xl md:text-2xl lg:text-3xl font-light;
 }
 
 .link-active {
-  font-size: 24px;
-  text-decoration: underline;
-  @apply text-th-primary font-semibold;
+  @apply sm:text-xl md:text-2xl lg:text-3xl text-th-primary font-semibold;
 }

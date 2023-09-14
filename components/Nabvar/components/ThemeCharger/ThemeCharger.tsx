@@ -8,7 +8,12 @@ const ThemeCharger: FC = () => {
   const { theme, setTheme } = useTheme()
 
   return (
-    <IconButton sx={{ ml: 1 }} onClick={(): void => setTheme(theme === 'light' ? 'dark' : 'light')} color="inherit">
+    <IconButton
+      sx={{ ml: 1 }}
+      disableRipple
+      onClick={(): void => setTheme(theme === 'light' ? 'dark' : 'light')}
+      color="inherit"
+    >
       {theme === 'light' ? (
         <Brightness7Icon className={classes['sun-icon']} />
       ) : (

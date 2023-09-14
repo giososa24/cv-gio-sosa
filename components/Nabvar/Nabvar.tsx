@@ -48,7 +48,7 @@ const Nabvar: FC = () => {
   return (
     <nav ref={ref} className={classes['nav-container']}>
       {(width ?? 0) <= 675 && (
-        <IconButton onClick={toggleDrawer(true)}>
+        <IconButton className="pl-4" onClick={toggleDrawer(true)}>
           <Menu />
         </IconButton>
       )}

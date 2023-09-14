@@ -1,25 +1,19 @@
-import React, { FC, useCallback, useEffect, useState } from 'react'
-import { Brightness7 } from '@mui/icons-material'
+import React, { FC } from 'react'
+import { Brightness7 as Brightness7Icon, DarkMode as DarkModeIcon } from '@mui/icons-material'
 import { IconButton } from '@mui/material'
 import { useTheme } from 'next-themes'
+import classes from './ThemeCharger.module.css'
 
 const ThemeCharger: FC = () => {
-  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
 
-  useEffect(() => setMounted(true), [])
-
-  const handleOnTheme = useCallback(() => {
-    theme === 'light' ? setTheme('dark') : setTheme('light')
-  }, [setTheme, theme])
-
-  if (!mounted) {
-    return null
-  }
-
   return (
-    <IconButton sx={{ ml: 1 }} onClick={handleOnTheme} color="inherit">
-      <Brightness7 />
+    <IconButton sx={{ ml: 1 }} onClick={(): void => setTheme(theme === 'light' ? 'dark' : 'light')} color="inherit">
+      {theme === 'light' ? (
+        <Brightness7Icon className={classes['sun-icon']} />
+      ) : (
+        <DarkModeIcon className={classes['moon-icon']} />
+      )}
     </IconButton>
   )
 }

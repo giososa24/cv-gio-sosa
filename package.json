@@ -18,11 +18,13 @@
     "@svgr/webpack": "^8.1.0",
     "aos": "^2.3.4",
     "classnames": "^2.3.2",
+    "i18next": "^23.7.6",
     "next": "14.0.1",
     "next-i18next": "^14.0.3",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-i18next": "^13.5.0",
     "react-resize-detector": "^9.1.0",
     "sharp": "^0.32.6"
   },

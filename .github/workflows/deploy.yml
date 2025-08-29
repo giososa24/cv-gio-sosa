@@ -42,7 +42,7 @@ jobs:
     - name: Deploy image
       uses: floms/action-caprover@v1
       with:
-        host: '${{ secrets.CAPROVER_SERVER }}'
+        host: https://captain.gio-sosa.com/
         password: '${{ secrets.CAPROVER_PASSWORD }}'
-        app: '${{ secrets.CAPROVER_APP_NAME }}'
+        app: cv
         image: ${{ steps.meta.outputs.tags }}

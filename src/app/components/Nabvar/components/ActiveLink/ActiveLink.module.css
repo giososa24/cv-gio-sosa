@@ -1,7 +1,0 @@
-.link {
-  @apply sm:text-xl md:text-2xl lg:text-3xl font-light;
-}
-
-.link-active {
-  @apply sm:text-xl md:text-2xl lg:text-3xl text-th-primary font-semibold;
-}

@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -18,8 +22,20 @@
     "alwaysStrict": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
-    "pretty": true
+    "pretty": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Nabvar", "components/Nabvar/components/ActiveLink"],
-  "exclude": ["node_modules"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

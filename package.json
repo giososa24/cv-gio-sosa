@@ -3,64 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm run open-browser && next dev",
-    "open-browser": "start http://localhost:3000",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "husky install"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.16",
-    "@mui/material": "^5.14.18",
-    "@svgr/webpack": "^8.1.0",
-    "aos": "^2.3.4",
-    "classnames": "^2.3.2",
-    "i18next": "^23.7.6",
-    "next": "14.0.1",
-    "next-i18next": "^14.0.3",
-    "next-themes": "^0.2.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-i18next": "^13.5.0",
-    "react-resize-detector": "^9.1.0",
-    "sharp": "^0.32.6"
-  },
-  "lint-staged": {
-    "./**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "./**/*.{css,scss,md,json}": [
-      "prettier --write"
-    ]
+    "i18next": "^25.4.2",
+    "next": "^15.5.2",
+    "next-i18next": "^15.4.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-i18next": "^15.7.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.2.0",
-    "@commitlint/config-conventional": "^18.4.2",
-    "@types/aos": "^3.0.6",
-    "@types/node": "^20.9.2",
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.14",
-    "@typescript-eslint/eslint-plugin": "^6.9.1",
-    "@typescript-eslint/parser": "^6.11.0",
-    "autoprefixer": "^10.4.16",
-    "eslint": "^8.52.0",
-    "eslint-config-import": "^0.13.0",
-    "eslint-config-next": "^14.0.3",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-prettier": "^5.0.1",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.0.2",
-    "postcss": "^8.4.31",
-    "prettier": "^3.0.3",
-    "tailwindcss": "^3.3.5",
-    "tsconfig-paths-webpack-plugin": "^4.1.0",
-    "typescript": "5.2.2"
+    "@tailwindcss/postcss": "^4.1.12",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "eslint": "^9.34.0",
+    "eslint-config-next": "^15.5.2",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.12",
+    "typescript": "^5.9.2"
   }
 }

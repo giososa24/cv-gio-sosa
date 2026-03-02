@@ -1,0 +1,40 @@
+{
+    "personal": {
+        "title": "MAESTRO EN SISTEMAS COMPUTACIONALES",
+        "age": "27 años",
+        "location": "Puebla, MX",
+        "bio": "Bio"
+    },
+    "sections": {
+        "profile": "Perfil",
+        "experience": "Experiencia",
+        "skills": "Habilidades",
+        "education": "Educación",
+        "languages": "Idiomas",
+        "certifications": "Certificaciones",
+        "others": "Otros"
+    },
+    "profile": {
+        "text": "Maestro en Sistema Computacionales egresado del Instituto Tecnológico Superior de Teziutlán con la especialidad en desarrollo de software e Ingeniero en Mecatrónia con la especialidad en automatización de procesos. Soy responsable, activo, dinámico, honesto y con buena actitud para trabajar en equipo, como entiendo el sentido de la urgencia tengo la capacidad para el trabajo bajo presión. Me gusta el desarrollo web lo cual me hace ser autodidacta en el área y considero que me es fácil aprender de nuevas tecnologías."
+    },
+    "labels": {
+        "developer": "Desarrollador",
+        "age": "Edad",
+        "location": "Ubicación",
+        "nationality": "Nacionalidad",
+        "availability": "Disponibilidad"
+    },
+    "footer": {
+        "builtWith": "Construido con Next.js, Tailwind e Imaginación"
+    },
+    "academic": {
+        "ms": "Maestro en Sistemas Computacionales",
+        "mechatronics": "Ingeniero en Mecatrónica",
+        "it": "Profesional Técnico Bachiller en Informática",
+        "graduated": "Titulado"
+    },
+    "work": {
+        "dev": "Desarrollador Web",
+        "frontEndDev": "Desarrollador Web FrontEnd"
+    }
+}

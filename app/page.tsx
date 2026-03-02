@@ -74,10 +74,16 @@ export default function ReimaginedCV() {
       <div className="absolute top-[10%] left-[5%] w-[300px] h-[300px] bg-emerald-accent/5 blur-[60px] rounded-full -z-10"></div>
       <div className="absolute bottom-[10%] right-[5%] w-[400px] h-[400px] bg-blue-accent/5 blur-[80px] rounded-full -z-10"></div>
 
-      <header className="animate grid md:grid-cols-[auto_1fr] gap-[40px] items-center mb-[60px] text-center md:text-left">
+      <header
+        className="animate grid md:grid-cols-[auto_1fr] gap-[40px] items-center mb-[60px] text-center md:text-left"
+        role="banner"
+      >
         <div className="relative w-[180px] h-[180px] mx-auto md:mx-0">
           <div className="absolute inset-[-10px] rounded-full bg-gradient-to-br from-emerald-accent to-blue-accent opacity-30 blur-[15px]"></div>
-          <div className="relative z-10 w-full h-full rounded-full border-2 border-[var(--card-border)] flex items-center justify-center text-[3.5rem] font-extrabold text-emerald-accent bg-[#1a1a1a]">
+          <div
+            className="relative z-10 w-full h-full rounded-full border-2 border-[var(--card-border)] flex items-center justify-center text-[3.5rem] font-extrabold text-emerald-accent bg-[#1a1a1a]"
+            aria-label={`Inicias de ${personalInfo.fullName}`}
+          >
             GS
           </div>
         </div>
@@ -91,12 +97,13 @@ export default function ReimaginedCV() {
           </div>
 
           <div className="mt-[20px] flex gap-[20px] text-[0.9rem] text-muted flex-wrap justify-center md:justify-start">
-            <span>📍 {personalInfo.location}</span>
+            <span aria-label="Ubicación">📍 {personalInfo.location}</span>
             <span>
               📧{" "}
               <a
                 href={`mailto:${personalInfo.email}`}
                 className="text-inherit no-underline"
+                aria-label={`Enviar correo a ${personalInfo.email}`}
               >
                 {personalInfo.email}
               </a>
@@ -108,6 +115,7 @@ export default function ReimaginedCV() {
               target="_blank"
               rel="noopener noreferrer"
               className="tag !text-emerald-accent !border-emerald-accent/20 flex items-center gap-[8px] no-underline"
+              aria-label="Ir a mi perfil de LinkedIn"
             >
               <span className="font-extrabold">in</span> LinkedIn
             </a>
@@ -116,6 +124,7 @@ export default function ReimaginedCV() {
               target="_blank"
               rel="noopener noreferrer"
               className="tag flex items-center gap-[8px] no-underline"
+              aria-label="Ir a mi perfil de GitHub"
             >
               <span className="text-[1.1rem]">&#9414;</span> GitHub
             </a>
@@ -123,13 +132,16 @@ export default function ReimaginedCV() {
         </div>
       </header>
 
-      <div className="grid grid-cols-12 gap-[20px] mb-[40px]">
+      <main className="grid grid-cols-12 gap-[20px] mb-[40px]">
         {/* Profile Section */}
         <section
           className="glass p-[30px] col-span-12 md:col-span-8 glass-hover animate"
           style={{ animationDelay: "0.1s" }}
+          aria-labelledby="profile-title"
         >
-          <h2 className="section-title">{t("sections.profile")}</h2>
+          <h2 id="profile-title" className="section-title">
+            {t("sections.profile")}
+          </h2>
           <p className="text-muted text-[1.1rem] font-light">
             {professionalProfile}
           </p>
@@ -139,8 +151,11 @@ export default function ReimaginedCV() {
         <section
           className="glass p-[30px] col-span-12 md:col-span-4 animate"
           style={{ animationDelay: "0.2s" }}
+          aria-labelledby="bio-title"
         >
-          <h2 className="section-title">{t("personal.bio")}</h2>
+          <h2 id="bio-title" className="section-title">
+            {t("personal.bio")}
+          </h2>
           <div className="grid gap-[20px]">
             <div>
               <div className="text-[0.7rem] text-emerald-accent uppercase tracking-wider font-bold">
@@ -169,11 +184,14 @@ export default function ReimaginedCV() {
         <section
           className="glass p-[30px] col-span-12 animate"
           style={{ animationDelay: "0.3s" }}
+          aria-labelledby="experience-title"
         >
-          <h2 className="section-title">{t("sections.experience")}</h2>
+          <h2 id="experience-title" className="section-title">
+            {t("sections.experience")}
+          </h2>
           <div className="flex flex-col gap-[30px]">
             {workExperience.map((work, index) => (
-              <div
+              <article
                 key={index}
                 className="relative pl-[30px] border-l border-[var(--card-border)] group"
               >
@@ -181,9 +199,9 @@ export default function ReimaginedCV() {
                 <div className="text-[0.85rem] text-emerald-accent font-semibold mb-[5px]">
                   {work.period}
                 </div>
-                <div className="text-[1.1rem] font-bold text-main">
+                <h3 className="text-[1.1rem] font-bold text-main">
                   {work.position}
-                </div>
+                </h3>
                 <div className="text-[0.95rem] text-emerald-accent mb-[10px]">
                   {work.company}
                 </div>
@@ -204,7 +222,7 @@ export default function ReimaginedCV() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </section>
@@ -213,13 +231,16 @@ export default function ReimaginedCV() {
         <section
           className="glass p-[30px] col-span-12 animate"
           style={{ animationDelay: "0.4s" }}
+          aria-labelledby="skills-title"
         >
-          <h2 className="section-title">{t("sections.skills")}</h2>
+          <h2 id="skills-title" className="section-title">
+            {t("sections.skills")}
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
             <div>
-              <div className="mb-[15px] text-[1rem] font-bold text-emerald-accent border-b border-emerald-accent/20 pb-[5px]">
+              <h3 className="mb-[15px] text-[1rem] font-bold text-emerald-accent border-b border-emerald-accent/20 pb-[5px]">
                 Front-end & Design
-              </div>
+              </h3>
               <div className="flex flex-wrap gap-[10px]">
                 {skills.frontend.map((s, i) => {
                   let customClass = "";
@@ -245,9 +266,9 @@ export default function ReimaginedCV() {
               </div>
             </div>
             <div>
-              <div className="mb-[15px] text-[1rem] font-bold text-emerald-accent border-b border-emerald-accent/20 pb-[5px]">
+              <h3 className="mb-[15px] text-[1rem] font-bold text-emerald-accent border-b border-emerald-accent/20 pb-[5px]">
                 Back-end & Databases
-              </div>
+              </h3>
               <div className="flex flex-wrap gap-[10px]">
                 {skills.backend.map((s, i) => (
                   <span key={i} className="tag">
@@ -257,9 +278,9 @@ export default function ReimaginedCV() {
               </div>
             </div>
             <div>
-              <div className="mb-[15px] text-[1rem] font-bold text-emerald-accent border-b border-emerald-accent/20 pb-[5px]">
+              <h3 className="mb-[15px] text-[1rem] font-bold text-emerald-accent border-b border-emerald-accent/20 pb-[5px]">
                 DevOps & SRE
-              </div>
+              </h3>
               <div className="flex flex-wrap gap-[10px]">
                 {skills.devops.map((s, i) => (
                   <span
@@ -278,8 +299,11 @@ export default function ReimaginedCV() {
         <section
           className="glass p-[30px] col-span-12 md:col-span-6 animate"
           style={{ animationDelay: "0.5s" }}
+          aria-labelledby="education-title"
         >
-          <h2 className="section-title">{t("sections.education")}</h2>
+          <h2 id="education-title" className="section-title">
+            {t("sections.education")}
+          </h2>
           <div className="flex flex-col gap-[30px]">
             {academicBackground.slice(0, 2).map((edu, index) => (
               <div
@@ -290,9 +314,9 @@ export default function ReimaginedCV() {
                 <div className="text-[0.85rem] text-emerald-accent font-semibold mb-[5px]">
                   {edu.period}
                 </div>
-                <div className="text-[1rem] font-bold text-main">
+                <h3 className="text-[1rem] font-bold text-main">
                   {edu.degree}
-                </div>
+                </h3>
                 <div className="text-muted text-[0.9rem]">
                   {edu.institution}
                 </div>
@@ -305,6 +329,7 @@ export default function ReimaginedCV() {
         <section
           className="glass p-[30px] col-span-12 animate"
           style={{ animationDelay: "0.6s" }}
+          aria-labelledby="misc-title"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
             <div>
@@ -332,6 +357,7 @@ export default function ReimaginedCV() {
                           rel="noopener noreferrer"
                           className="text-emerald-accent hover:text-blue-accent transition-colors"
                           title="Ver Certificado"
+                          aria-label={`Ver certificado de ${c.name}`}
                         >
                           📜
                         </a>
@@ -354,9 +380,12 @@ export default function ReimaginedCV() {
             </div>
           </div>
         </section>
-      </div>
+      </main>
 
-      <footer className="text-center py-[40px] text-muted text-[0.8rem]">
+      <footer
+        className="text-center py-[40px] text-muted text-[0.8rem]"
+        role="contentinfo"
+      >
         © {currentYear} {personalInfo.fullName} • {t("footer.builtWith")}
       </footer>
     </div>

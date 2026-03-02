@@ -1,34 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). 
+# 🚀 Reimagined CV - Giovanni Sosa
 
-## Getting Started
+A premium, high-performance personal CV built with modern web technologies, featuring a dark/light mode, internationalization (ES/EN), and a sleek design inspired by modern development tools.
 
-First, run the development server:
+## ✨ Features
+
+- 🌓 **Dynamic Theming**: Smooth transition between Dark and Light modes.
+- 🌍 **Internationalization**: Full support for Spanish and English using `i18next`.
+- 📱 **Fully Responsive**: Optimized for all devices from mobile to large desktops.
+- ⚡ **Performance**: Built with Next.js (App Router) for ultimate speed.
+- 🎨 **Modern Aesthetics**: Glassmorphism effects, custom scrollbars, and fluid animations.
+- 🐳 **Dockerized**: Ready for containerized deployment.
+- 🤖 **CI/CD**: Automated deployment to CapRover via GitHub Actions.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 15+](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Localization**: [i18next](https://www.i18next.com/)
+- **Icons/Visuals**: Custom CSS & Lucide patterns.
+- **Infrastructure**: Docker, GitHub Actions, CapRover.
+
+## 📦 Architecture Patterns
+
+The project follows clean code principles and modern architectural patterns:
+
+- **Layered Arch**: Separation of data (services), types, and presentation.
+- **Dynamic Data**: Localized data files for easy maintenance.
+- **Component-Based**: Reusable and atomic UI components.
+
+## 🚀 Getting Started
+
+### Local Development
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/giososa24/cv-reimagined.git
+   ```
+
+2. **Install dependencies**:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Run the development server**:
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**:
+   ```bash
+   npm run build
+   ```
+
+### Docker
+
+You can run the project using Docker:
 
 ```bash
-npm run dev
-# or
-yarn dev
+docker build -t giososa-cv .
+docker run -p 3000:3000 giososa-cv
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚢 Deployment
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+This project is configured to be deployed automatically to a **CapRover** instance.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. Updates are pushed to the `main` branch.
+2. **GitHub Actions** triggers the build.
+3. A Docker image is built and pushed to **ghcr.io**.
+4. The image is automatically deployed to the CapRover cluster.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Built with ❤️ by [Giovanni Sosa](https://github.com/giososa24)

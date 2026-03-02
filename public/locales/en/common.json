@@ -1,3 +1,40 @@
 {
-  "Ir a arriba": "Go to top"
+    "personal": {
+        "title": "MASTER IN COMPUTER SYSTEMS",
+        "age": "27 years",
+        "location": "Puebla, MX",
+        "bio": "Bio"
+    },
+    "sections": {
+        "profile": "Profile",
+        "experience": "Experience",
+        "skills": "Skills",
+        "education": "Education",
+        "languages": "Languages",
+        "certifications": "Certifications",
+        "others": "Others"
+    },
+    "profile": {
+        "text": "Master in Computer Systems graduated from the Instituto Tecnológico Superior de Teziutlán with a specialty in software development and Mechatronics Engineer with a specialty in process automation. I am responsible, active, dynamic, honest, and have a good attitude towards teamwork. As I understand the sense of urgency, I have the ability to work under pressure. I enjoy web development, making me self-taught in the area, and I find it easy to learn new technologies."
+    },
+    "labels": {
+        "developer": "Developer",
+        "age": "Age",
+        "location": "Location",
+        "nationality": "Nationality",
+        "availability": "Availability"
+    },
+    "footer": {
+        "builtWith": "Built with Next.js, Tailwind & Imagination"
+    },
+    "academic": {
+        "ms": "Master in Computer Systems",
+        "mechatronics": "Mechatronics Engineer",
+        "it": "Associate Degree in Information Technology",
+        "graduated": "Graduated"
+    },
+    "work": {
+        "dev": "Web Developer",
+        "frontEndDev": "FrontEnd Web Developer"
+    }
 }

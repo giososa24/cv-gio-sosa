@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://cv.gio-sosa.com/sitemap.xml

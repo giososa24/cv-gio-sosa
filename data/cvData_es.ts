@@ -3,7 +3,7 @@ import { CVData } from "../types/cv";
 export const cvData: CVData = {
     personalInfo: {
         fullName: "GIOVANNI ABRAHAM SOSA DE LA CRUZ",
-        title: "MAESTRO EN SISTEMAS COMPUTACIONALES",
+        title: "DESARROLLADOR WEB",
         age: "27 años",
         location: "Puebla, México",
         nationality: "Mexicana",
@@ -142,6 +142,14 @@ export const cvData: CVData = {
             "VPS (Configuración desde cero)",
             "Ubuntu/Debian",
             "Nginx",
+        ],
+        mobile: [
+            "React Native",
+            "Flutter",
+        ],
+        testing: [
+            "Jest (Unit Testing)",
+            "Cypress (E2E Testing)",
         ],
     },
     courses: [

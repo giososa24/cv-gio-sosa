@@ -36,6 +36,8 @@ export interface Skills {
     frontend: string[];
     backend: string[];
     devops: string[];
+    mobile: string[];
+    testing: string[];
 }
 
 export interface Course {

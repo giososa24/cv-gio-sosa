@@ -91,9 +91,6 @@ export default function ReimaginedCV() {
           <h1 className="name">{personalInfo.fullName}</h1>
           <div className="flex gap-[10px] flex-wrap justify-center md:justify-start">
             <span className="job-title-tag">{personalInfo.title}</span>
-            <span className="job-title-tag !text-[#3b82f6] !bg-[#3b82f6]/10 !border-[#3b82f6]/20">
-              {t("labels.developer")}
-            </span>
           </div>
 
           <div className="mt-[20px] flex gap-[20px] text-[0.9rem] text-muted flex-wrap justify-center md:justify-start">
@@ -236,10 +233,10 @@ export default function ReimaginedCV() {
           <h2 id="skills-title" className="section-title">
             {t("sections.skills")}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px]">
             <div>
               <h3 className="mb-[15px] text-[1rem] font-bold text-emerald-accent border-b border-emerald-accent/20 pb-[5px]">
-                Front-end & Design
+                {t("labels.skills_frontend")}
               </h3>
               <div className="flex flex-wrap gap-[10px]">
                 {skills.frontend.map((s, i) => {
@@ -267,7 +264,7 @@ export default function ReimaginedCV() {
             </div>
             <div>
               <h3 className="mb-[15px] text-[1rem] font-bold text-emerald-accent border-b border-emerald-accent/20 pb-[5px]">
-                Back-end & Databases
+                {t("labels.skills_backend")}
               </h3>
               <div className="flex flex-wrap gap-[10px]">
                 {skills.backend.map((s, i) => (
@@ -279,7 +276,7 @@ export default function ReimaginedCV() {
             </div>
             <div>
               <h3 className="mb-[15px] text-[1rem] font-bold text-emerald-accent border-b border-emerald-accent/20 pb-[5px]">
-                DevOps & SRE
+                {t("labels.skills_devops")}
               </h3>
               <div className="flex flex-wrap gap-[10px]">
                 {skills.devops.map((s, i) => (
@@ -290,6 +287,58 @@ export default function ReimaginedCV() {
                     {s}
                   </span>
                 ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="mb-[15px] text-[1rem] font-bold text-emerald-accent border-b border-emerald-accent/20 pb-[5px]">
+                {t("labels.skills_mobile")}
+              </h3>
+              <div className="flex flex-wrap gap-[10px]">
+                {skills.mobile.map((s, i) => {
+                  let customClass = "";
+                  const isFlutter = s.toLowerCase().includes("flutter");
+                  const isRN = s.toLowerCase().includes("react native");
+                  
+                  if (theme === "dark") {
+                    if (isFlutter) customClass = "text-[#40D0FB] border-[#40D0FB]/30 bg-[#40D0FB]/5 font-medium";
+                    if (isRN) customClass = "text-[#61DBFB] border-[#61DBFB]/30 bg-[#61DBFB]/5 font-medium";
+                  } else {
+                    if (isFlutter) customClass = "text-[#02569B] border-[#02569B]/20 bg-[#02569B]/5 font-semibold";
+                    if (isRN) customClass = "text-[#007acc] border-[#007acc]/20 bg-[#007acc]/5 font-semibold";
+                  }
+                  
+                  return (
+                    <span key={i} className={`tag ${customClass}`}>
+                      {s}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+            <div>
+              <h3 className="mb-[15px] text-[1rem] font-bold text-emerald-accent border-b border-emerald-accent/20 pb-[5px]">
+                {t("labels.skills_testing")}
+              </h3>
+              <div className="flex flex-wrap gap-[10px]">
+                {skills.testing.map((s, i) => {
+                  let customClass = "";
+                  const isCypress = s.toLowerCase().includes("cypress");
+                  const isJest = s.toLowerCase().includes("jest");
+
+                  if (theme === "dark") {
+                    if (isCypress) customClass = "text-[#49d3a2] border-[#49d3a2]/30 bg-[#49d3a2]/5 font-medium";
+                    if (isJest) customClass = "text-[#fb4f5e] border-[#fb4f5e]/30 bg-[#fb4f5e]/5 font-medium";
+                  } else {
+                    if (isCypress) customClass = "text-[#008f66] border-[#008f66]/20 bg-[#008f66]/5 font-semibold";
+                    if (isJest) customClass = "text-[#c21325] border-[#c21325]/20 bg-[#c21325]/5 font-semibold";
+                  }
+
+                  return (
+                    <span key={i} className={`tag ${customClass}`}>
+                      {s}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           </div>

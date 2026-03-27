@@ -22,7 +22,12 @@
         "age": "Edad",
         "location": "Ubicación",
         "nationality": "Nacionalidad",
-        "availability": "Disponibilidad"
+        "availability": "Disponibilidad",
+        "skills_frontend": "Front-end & Diseño",
+        "skills_backend": "Back-end & Base de datos",
+        "skills_devops": "DevOps & SRE",
+        "skills_mobile": "Desarrollo Mobile",
+        "skills_testing": "Pruebas & QA"
     },
     "footer": {
         "builtWith": "Construido con Next.js, Tailwind e Imaginación"

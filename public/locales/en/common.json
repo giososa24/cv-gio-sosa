@@ -27,6 +27,7 @@
         "skills_backend": "Back-end & Databases",
         "skills_devops": "DevOps & SRE",
         "skills_mobile": "Mobile Development",
+        "skills_architecture": "Architecture & Patterns",
         "skills_testing": "Testing & QA"
     },
     "footer": {

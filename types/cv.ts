@@ -1,10 +1,10 @@
 export interface PersonalInfo {
     fullName: string;
     title: string;
-    age: string;
+    age?: string;
     location: string;
     nationality: string;
-    address: string;
+    address?: string;
     email: string;
     avatar: string;
     linkedIn: string;
@@ -35,6 +35,7 @@ export interface Language {
 export interface Skills {
     frontend: string[];
     backend: string[];
+    architecture: string[];
     devops: string[];
     mobile: string[];
     testing: string[];
@@ -68,6 +69,6 @@ export interface CVData {
     languages: Language[];
     skills: Skills;
     courses: Course[];
-    references: References;
+    references?: References;
     otherData: string[];
 }

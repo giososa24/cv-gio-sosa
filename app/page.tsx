@@ -203,7 +203,7 @@ export default function ReimaginedCV() {
                   {work.company}
                 </div>
                 <ul className="list-none mt-[10px]">
-                  {work.activities.slice(0, 3).map((act, i) => (
+                  {work.activities.map((act, i) => (
                     <li
                       key={i}
                       className="text-muted text-[0.9rem] mb-[5px] flex gap-[10px]"
@@ -276,6 +276,21 @@ export default function ReimaginedCV() {
             </div>
             <div>
               <h3 className="mb-[15px] text-[1rem] font-bold text-emerald-accent border-b border-emerald-accent/20 pb-[5px]">
+                {t("labels.skills_architecture")}
+              </h3>
+              <div className="flex flex-wrap gap-[10px]">
+                {skills.architecture.map((s, i) => {
+                  let customClass = "border-orange-accent/30 font-medium";
+                  return (
+                    <span key={i} className={`tag ${customClass}`}>
+                      {s}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+            <div>
+              <h3 className="mb-[15px] text-[1rem] font-bold text-emerald-accent border-b border-emerald-accent/20 pb-[5px]">
                 {t("labels.skills_devops")}
               </h3>
               <div className="flex flex-wrap gap-[10px]">
@@ -298,15 +313,23 @@ export default function ReimaginedCV() {
                   let customClass = "";
                   const isFlutter = s.toLowerCase().includes("flutter");
                   const isRN = s.toLowerCase().includes("react native");
-                  
+
                   if (theme === "dark") {
-                    if (isFlutter) customClass = "text-[#40D0FB] border-[#40D0FB]/30 bg-[#40D0FB]/5 font-medium";
-                    if (isRN) customClass = "text-[#61DBFB] border-[#61DBFB]/30 bg-[#61DBFB]/5 font-medium";
+                    if (isFlutter)
+                      customClass =
+                        "text-[#40D0FB] border-[#40D0FB]/30 bg-[#40D0FB]/5 font-medium";
+                    if (isRN)
+                      customClass =
+                        "text-[#61DBFB] border-[#61DBFB]/30 bg-[#61DBFB]/5 font-medium";
                   } else {
-                    if (isFlutter) customClass = "text-[#02569B] border-[#02569B]/20 bg-[#02569B]/5 font-semibold";
-                    if (isRN) customClass = "text-[#007acc] border-[#007acc]/20 bg-[#007acc]/5 font-semibold";
+                    if (isFlutter)
+                      customClass =
+                        "text-[#02569B] border-[#02569B]/20 bg-[#02569B]/5 font-semibold";
+                    if (isRN)
+                      customClass =
+                        "text-[#007acc] border-[#007acc]/20 bg-[#007acc]/5 font-semibold";
                   }
-                  
+
                   return (
                     <span key={i} className={`tag ${customClass}`}>
                       {s}
@@ -326,11 +349,19 @@ export default function ReimaginedCV() {
                   const isJest = s.toLowerCase().includes("jest");
 
                   if (theme === "dark") {
-                    if (isCypress) customClass = "text-[#49d3a2] border-[#49d3a2]/30 bg-[#49d3a2]/5 font-medium";
-                    if (isJest) customClass = "text-[#fb4f5e] border-[#fb4f5e]/30 bg-[#fb4f5e]/5 font-medium";
+                    if (isCypress)
+                      customClass =
+                        "text-[#49d3a2] border-[#49d3a2]/30 bg-[#49d3a2]/5 font-medium";
+                    if (isJest)
+                      customClass =
+                        "text-[#fb4f5e] border-[#fb4f5e]/30 bg-[#fb4f5e]/5 font-medium";
                   } else {
-                    if (isCypress) customClass = "text-[#008f66] border-[#008f66]/20 bg-[#008f66]/5 font-semibold";
-                    if (isJest) customClass = "text-[#c21325] border-[#c21325]/20 bg-[#c21325]/5 font-semibold";
+                    if (isCypress)
+                      customClass =
+                        "text-[#008f66] border-[#008f66]/20 bg-[#008f66]/5 font-semibold";
+                    if (isJest)
+                      customClass =
+                        "text-[#c21325] border-[#c21325]/20 bg-[#c21325]/5 font-semibold";
                   }
 
                   return (
@@ -354,7 +385,7 @@ export default function ReimaginedCV() {
             {t("sections.education")}
           </h2>
           <div className="flex flex-col gap-[30px]">
-            {academicBackground.slice(0, 2).map((edu, index) => (
+            {academicBackground.map((edu, index) => (
               <div
                 key={index}
                 className="relative pl-[30px] border-l border-[var(--card-border)]"

@@ -3,7 +3,7 @@ import { CVData } from "../types/cv";
 export const cvData: CVData = {
     personalInfo: {
         fullName: "GIOVANNI ABRAHAM SOSA DE LA CRUZ",
-        title: "FULLSTACK DEVELOPER | .NET & REACT",
+        title: "FULLSTACK DEVELOPER | .NET & REACT & ANGULAR",
         location: "Puebla, México",
         nationality: "Mexicana",
         email: "giososa24@gmail.com",
@@ -51,12 +51,12 @@ export const cvData: CVData = {
             position: "Desarrollador Fullstack",
             period: "JUN 2024 - DIC 2024",
             activities: [
-                "Desarrollé una aplicación web y móvil para la gestión de personal, inventario, clientes y caja utilizando .NET Core 8, React, React Native y PostgreSQL, integrando Keycloak para autenticación basada en roles.",
+                "Desarrollé una aplicación web y móvil para la gestión de personal, inventario, clientes y caja utilizando .NET Core 8, Angular 18, React Native y PostgreSQL, integrando Keycloak para la gestión de autenticación y autorización basada en roles.",
                 "Optimicé el cálculo de comisiones de repartidores, reduciendo el tiempo de procesamiento de ~20 minutos a segundos mediante automatización del flujo.",
                 "Implementé módulos de productos y caja, eliminando procesos manuales y mejorando la eficiencia operativa.",
                 "Migré la arquitectura de un monolito a microservicios, mejorando la mantenibilidad y separación de responsabilidades.",
             ],
-            technologies: [".NET Core 8", "React", "React Native", "PostgreSQL", "Keycloak", "Microservicios", "Docker", "CapRover"],
+            technologies: [".NET Core 8", "Angular 18", "React Native", "PostgreSQL", "Keycloak", "Microservicios", "Docker", "CapRover"],
         },
         {
             company: "Ipsos Group S.A. (Proyecto 3 meses)",
@@ -96,11 +96,11 @@ export const cvData: CVData = {
             position: "Desarrollador Web",
             period: "ABR 2018 - AGO 2020",
             activities: [
-                "Brindé mantenimiento y soporte al sistema SOS (Seguimiento de Órdenes de Servicio), gestionando la creación, actualización y cierre de órdenes.",
+                "Brindé mantenimiento y soporte al sistema SOS (Seguimiento de Órdenes de Servicio), gestionando la creación, actualización y cierre de órdenes para el equipo de mantenimiento utilizando Angular 7, .NET Core 2.2 y SQL Server.",
                 "Optimicé el registro y validación de gastos del personal en campo mediante el mantenimiento del sistema de viáticos.",
                 "Administré y di soporte al sistema de inventario, controlando el uso y seguimiento de refacciones utilizadas en servicios.",
             ],
-            technologies: ["Angular", ".NET Core", "C#", "SQL Server", "Entity Framework", "Bootstrap"],
+            technologies: ["Angular 7", ".NET Core 2.2", "C#", "SQL Server", "Entity Framework", "Bootstrap"],
         },
     ],
     languages: [
@@ -117,6 +117,8 @@ export const cvData: CVData = {
         frontend: [
             "Next.js",
             "React 18",
+            "Angular",
+            "PrimeNG",
             "TypeScript",
             "Tailwind CSS",
             "HTML5",
@@ -136,6 +138,7 @@ export const cvData: CVData = {
             "PostgreSQL",
             "Entity Framework",
             "Dapper",
+            "Keycloak",
         ],
         architecture: [
             "Arquitectura Limpia",
